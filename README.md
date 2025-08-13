@@ -1,36 +1,223 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Pietro Pugliesi - iOS Developer Portfolio
 
-## Getting Started
+Modern, responsive portfolio website built with Next.js App Router, featuring bilingual support (Portuguese/English) and dark/light mode.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- 🌍 **Bilingual support** (PT/EN) with toggle
+- 🌙 **Dark/Light mode** with system preference detection
+- 📱 **Fully responsive** design (mobile-first)
+- ⚡ **Optimized for Cloudflare Pages** deployment
+- 🎨 **Modern navy/slate** color scheme
+- 📊 **JSON-based** content management
+- 🔧 **Next.js App Router** with static export
+- 🎯 **iOS Developer** focused design
+
+## 🛠️ Tech Stack
+
+- **Framework:** Next.js 14 (App Router)
+- **Styling:** Tailwind CSS
+- **Icons:** React Icons (Feather)
+- **Deployment:** Cloudflare Pages
+- **Type:** Static Site Generation (SSG)
+
+## 📁 Project Structure
+
+```
+pietro-portfolio/
+├── app/
+│   ├── globals.css
+│   ├── layout.js
+│   └── page.js
+├── data/
+│   └── resume.json
+├── public/
+│   └── (add your photo here)
+├── .gitignore
+├── next.config.js
+├── package.json
+├── postcss.config.js
+├── tailwind.config.js
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🏁 Getting Started
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 1. Install Dependencies
+```bash
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 2. Add Your Photo
+Add your photo to the `public/` folder and update the image placeholder in `app/page.js`:
 
-## Learn More
+```jsx
+// Replace the placeholder div with:
+<Image
+  src="/your-photo.jpg"
+  alt="Pietro Pugliesi"
+  width={320}
+  height={320}
+  className="rounded-2xl object-cover"
+/>
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 3. Run Development Server
+```bash
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Open [http://localhost:3000](http://localhost:3000) to see the result.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 4. Customize Content
+Edit `data/resume.json` to update:
+- Personal information
+- Work experience
+- Projects
+- Skills
+- Contact details
 
-## Deploy on Vercel
+## 🌐 Deployment to Cloudflare Pages
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Method 1: GitHub Integration (Recommended)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Push to GitHub:**
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git branch -M main
+   git remote add origin https://github.com/yourusername/pietro-portfolio.git
+   git push -u origin main
+   ```
+
+2. **Connect to Cloudflare Pages:**
+   - Go to [Cloudflare Dashboard](https://dash.cloudflare.com/)
+   - Navigate to **Workers & Pages**
+   - Click **Create application** > **Pages** > **Connect to Git**
+   - Select your GitHub repository
+   - Configure build settings:
+     - **Build command:** `npm run build`
+     - **Build output directory:** `out`
+     - **Framework preset:** Next.js (Static HTML Export)
+
+3. **Deploy:**
+   - Click **Save and Deploy**
+   - Your site will be available at `your-project.pages.dev`
+
+### Method 2: Direct Upload
+
+1. **Build the project:**
+   ```bash
+   npm run build
+   ```
+
+2. **Upload the `out` folder** to Cloudflare Pages dashboard
+
+### Adding Custom Domain
+
+1. In Cloudflare Pages dashboard, go to **Custom domains**
+2. Click **Set up a custom domain**
+3. Add your domain (e.g., `pietropugliesi.dev`)
+4. Follow DNS configuration instructions
+5. SSL certificate will be generated automatically
+
+## 🎨 Customization
+
+### Colors
+The design uses a navy/slate color scheme. To customize, edit `tailwind.config.js`:
+
+```javascript
+colors: {
+  slate: {
+    // Your custom colors here
+  }
+}
+```
+
+### Content
+All content is managed through `data/resume.json`. The structure supports:
+- Basic information
+- Work experience with highlights and technologies
+- Personal projects
+- Skills categorization
+- Social media profiles
+
+### Styling
+- **Global styles:** `app/globals.css`
+- **Component styles:** Tailwind classes in `app/page.js`
+- **Dark mode:** Automatic with `dark:` classes
+
+## 📊 Performance Features
+
+- **Static Site Generation** for fast loading
+- **Image optimization** with Next.js Image component
+- **Automatic code splitting**
+- **CSS optimization** with Tailwind CSS
+- **Smooth scrolling** navigation
+- **Responsive design** for all devices
+
+## 🔧 Development Commands
+
+```bash
+# Development server
+npm run dev
+
+# Production build
+npm run build
+
+# Start production server locally
+npm start
+
+# Linting
+npm run lint
+```
+
+## 📝 Content Management
+
+The `resume.json` file follows a structured format:
+
+```json
+{
+  "pt": {
+    "basics": { /* personal info */ },
+    "work": [ /* work experience */ ],
+    "projects": [ /* personal projects */ ],
+    "skills": { /* categorized skills */ }
+  },
+  "en": { /* English version */ }
+}
+```
+
+## 🌍 Bilingual Support
+
+- Language toggle in header
+- Persistent language preference (localStorage)
+- Complete translation for all sections
+- SEO-friendly with proper lang attributes
+
+## 📱 Mobile Optimization
+
+- **Mobile-first** responsive design
+- **Touch-friendly** interactive elements
+- **Optimized typography** for small screens
+- **Collapsible navigation** on mobile
+
+## 🚀 Performance Tips
+
+1. **Optimize images** before adding to `public/`
+2. **Keep JSON data** lean and relevant
+3. **Use WebP format** for photos when possible
+4. **Test on mobile devices** regularly
+
+## 📄 License
+
+MIT License - feel free to use this template for your own portfolio!
+
+## 🤝 Contributing
+
+Feel free to submit issues and pull requests to improve this template.
+
+---
+
+**Built with ❤️ for iOS Developers**

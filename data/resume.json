@@ -1,0 +1,266 @@
+{
+  "pt": {
+    "basics": {
+      "name": "Pietro Ruy Pugliesi",
+      "label": "Desenvolvedor iOS & Engenheiro de Computação",
+      "email": "pietroruypugliesi@gmail.com",
+      "phone": "+55 (13) 98225-3655",
+      "url": "https://github.com/pietro1704",
+      "summary": "Segundo líder técnico da equipe iOS mais produtiva do Pinterest, com mais de 50 desenvolvedores no time global. Reconhecido como o engenheiro com maior entrega individual, atuando em tarefas críticas e na mentoria técnica de novos integrantes.",
+      "location": {
+        "city": "Santos",
+        "region": "SP",
+        "country": "Brasil"
+      },
+      "profiles": [
+        {
+          "network": "GitHub",
+          "username": "pietro1704",
+          "url": "https://github.com/pietro1704"
+        },
+        {
+          "network": "LinkedIn",
+          "username": "pietro-pugliesi",
+          "url": "https://linkedin.com/in/pietro-pugliesi/"
+        },
+        {
+          "network": "Medium",
+          "username": "@pietropugliesi",
+          "url": "https://medium.com/@pietropugliesi"
+        }
+      ]
+    },
+    "work": [
+      {
+        "name": "Pinterest",
+        "position": "iOS Developer (Pleno/Sênior)",
+        "url": "https://pinterest.com",
+        "startDate": "2023-01-01",
+        "endDate": "2025-01-01",
+        "summary": "Segundo líder técnico da equipe iOS mais produtiva do Pinterest",
+        "highlights": [
+          "Liderança na migração de Objective-C para Swift com arquitetura MVVM moderna",
+          "Reimplementação completa da tela de 'Atualizações' e partes essenciais da visualização de Pin",
+          "Manutenção do código legado em Objective-C enquanto conduzia a modernização",
+          "Mentor técnico ativo: organizador de sessões fixas de tira-dúvidas",
+          "Revisão contínua de PRs e disseminação de boas práticas de Clean Code",
+          "Integração com QA para validação e testes, com deploy via Buildkite"
+        ],
+        "technologies": ["Swift", "Objective-C", "MVVM", "SwiftUI", "UIKit", "Buildkite"]
+      },
+      {
+        "name": "Instituto de Pesquisas Eldorado",
+        "position": "iOS Developer",
+        "url": "https://eldorado.org.br",
+        "startDate": "2021-01-01",
+        "endDate": "2023-01-01",
+        "summary": "Desenvolvimento de apps móveis e liderança técnica",
+        "highlights": [
+          "Desenvolvimento dos apps WEMOB e Márcio Atalla",
+          "Líder técnico: onboarding, mentoria, revisão de código",
+          "Deploy com Fastlane, GitLab CI, TestFlight"
+        ],
+        "technologies": ["SwiftUI", "UIKit", "Combine", "Async/Await", "REST", "CI/CD", "Fastlane"]
+      },
+      {
+        "name": "Apple Developer Academy",
+        "position": "Aluno e Residente",
+        "url": "https://developeracademy.pucpr.br",
+        "startDate": "2019-01-01",
+        "endDate": "2021-12-31",
+        "summary": "Programa oficial da Apple voltado à formação em desenvolvimento iOS",
+        "highlights": [
+          "Formação sólida em Swift, UIKit e desenvolvimento orientado ao produto",
+          "Aprendizado de design centrado no usuário e acessibilidade",
+          "Desenvolvimento de diversos apps iOS, do protótipo ao MVP funcional",
+          "Primeiros contatos com Clean Code, princípios SOLID e metodologias ágeis",
+          "Como residente, ajudei novos alunos e colaborei em projetos internos"
+        ],
+        "technologies": ["Swift", "UIKit", "SwiftUI", "HIG", "Design Thinking", "SOLID"]
+      }
+    ],
+    "education": [
+      {
+        "institution": "UNICAMP",
+        "area": "Engenharia da Computação",
+        "studyType": "Bacharelado",
+        "startDate": "2018-01-01",
+        "endDate": "2022-12-31"
+      }
+    ],
+    "projects": [
+      {
+        "name": "Breviary App",
+        "description": "App iOS para leituras litúrgicas com suporte a versões antigas do iOS",
+        "highlights": [
+          "Suporte completo para iOS legacy",
+          "Pipeline CI/CD automatizado",
+          "Interface limpa e acessível"
+        ],
+        "technologies": ["Swift", "UIKit", "CI/CD"],
+        "url": "https://github.com/pietro1704/breviary"
+      },
+      {
+        "name": "Site Pessoal Rails",
+        "description": "Website pessoal desenvolvido em Ruby on Rails com frontend React",
+        "highlights": [
+          "Frontend moderno com React",
+          "Deploy automatizado no Heroku",
+          "Design responsivo"
+        ],
+        "technologies": ["Ruby on Rails", "React", "Heroku"],
+        "url": "https://pietropugliesi.dev"
+      },
+      {
+        "name": "Flutter Text Rating",
+        "description": "Micro apps em Flutter para avaliação e armazenamento de textos",
+        "highlights": [
+          "Interface intuitiva para rating",
+          "Armazenamento local eficiente",
+          "Animações suaves"
+        ],
+        "technologies": ["Flutter", "Dart", "SQLite"]
+      }
+    ],
+    "skills": {
+      "iOS Development": ["Swift", "Objective-C", "SwiftUI", "UIKit", "Combine", "Async/Await", "Core Data", "HealthKit"],
+      "Architecture": ["MVVM", "MVC", "VIPER", "SOLID", "Clean Code", "TDD"],
+      "Tools & CI/CD": ["Xcode", "Fastlane", "GitLab CI", "GitHub Actions", "Buildkite", "TestFlight"],
+      "Backend": ["Java SpringBoot", "Node.js", "Ruby on Rails", "REST APIs", "Firebase"],
+      "Web": ["React", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap"],
+      "Other": ["Git", "Docker", "Postman", "Swagger", "macOS", "Linux"]
+    }
+  },
+  "en": {
+    "basics": {
+      "name": "Pietro Ruy Pugliesi",
+      "label": "iOS Developer & Computer Engineer",
+      "email": "pietroruypugliesi@gmail.com",
+      "phone": "+55 (13) 98225-3655",
+      "url": "https://github.com/pietro1704",
+      "summary": "Second technical lead of Pinterest's most productive iOS team, within a global engineering group of 50+ developers. Recognized as the team's top contributor, leading multiple core tasks and mentoring new hires.",
+      "location": {
+        "city": "Santos",
+        "region": "SP",
+        "country": "Brazil"
+      },
+      "profiles": [
+        {
+          "network": "GitHub",
+          "username": "pietro1704",
+          "url": "https://github.com/pietro1704"
+        },
+        {
+          "network": "LinkedIn",
+          "username": "pietro-pugliesi",
+          "url": "https://linkedin.com/in/pietro-pugliesi/"
+        },
+        {
+          "network": "Medium",
+          "username": "@pietropugliesi",
+          "url": "https://medium.com/@pietropugliesi"
+        }
+      ]
+    },
+    "work": [
+      {
+        "name": "Pinterest",
+        "position": "iOS Developer (Mid/Senior)",
+        "url": "https://pinterest.com",
+        "startDate": "2023-01-01",
+        "endDate": "2025-01-01",
+        "summary": "Second technical lead of Pinterest's most productive iOS team",
+        "highlights": [
+          "Spearheaded key parts of the migration from legacy Objective-C to modern Swift-based MVVM architecture",
+          "Led the full reimplementation of the 'Notifications' screen and core modules of the Pin view",
+          "Maintained the legacy Objective-C codebase while gradually modernizing the app",
+          "Provided ongoing mentorship: created and maintained open 'office hours' for engineering questions",
+          "Regularly reviewed PRs and enforced clean code standards across squads",
+          "Collaborated with QA for integration tests, deployed via Buildkite pipelines"
+        ],
+        "technologies": ["Swift", "Objective-C", "MVVM", "SwiftUI", "UIKit", "Buildkite"]
+      },
+      {
+        "name": "Instituto de Pesquisas Eldorado",
+        "position": "iOS Developer",
+        "url": "https://eldorado.org.br",
+        "startDate": "2021-01-01",
+        "endDate": "2023-01-01",
+        "summary": "Mobile app development and technical leadership",
+        "highlights": [
+          "Developed WEMOB (electric vehicle) and health apps",
+          "Technical lead: mentoring, onboarding, code reviews",
+          "Deployed apps via Fastlane, GitLab CI, and TestFlight"
+        ],
+        "technologies": ["SwiftUI", "UIKit", "Combine", "Async/Await", "REST", "CI/CD", "Fastlane"]
+      },
+      {
+        "name": "Apple Developer Academy",
+        "position": "Student & Resident",
+        "url": "https://developeracademy.pucpr.br",
+        "startDate": "2019-01-01",
+        "endDate": "2021-12-31",
+        "summary": "Apple's official development training program focused on iOS ecosystem",
+        "highlights": [
+          "Acquired strong foundation in Swift, UIKit, and product-focused development",
+          "Learned design thinking, inclusive design practices, and storytelling for product pitches",
+          "Developed multiple iOS apps from prototype to functional MVP",
+          "First exposure to clean code principles, SOLID, and agile development",
+          "Graduated into a resident role to support newer students"
+        ],
+        "technologies": ["Swift", "UIKit", "SwiftUI", "HIG", "Design Thinking", "SOLID"]
+      }
+    ],
+    "education": [
+      {
+        "institution": "UNICAMP",
+        "area": "Computer Engineering",
+        "studyType": "Bachelor's",
+        "startDate": "2018-01-01",
+        "endDate": "2022-12-31"
+      }
+    ],
+    "projects": [
+      {
+        "name": "Breviary App",
+        "description": "iOS app for liturgy readings with legacy iOS support",
+        "highlights": [
+          "Full support for legacy iOS versions",
+          "Automated CI/CD pipeline",
+          "Clean and accessible interface"
+        ],
+        "technologies": ["Swift", "UIKit", "CI/CD"],
+        "url": "https://github.com/pietro1704/breviary"
+      },
+      {
+        "name": "Personal Rails Website",
+        "description": "Personal website built with Ruby on Rails and React frontend",
+        "highlights": [
+          "Modern React frontend",
+          "Automated Heroku deployment",
+          "Responsive design"
+        ],
+        "technologies": ["Ruby on Rails", "React", "Heroku"],
+        "url": "https://pietropugliesi.dev"
+      },
+      {
+        "name": "Flutter Text Rating",
+        "description": "Flutter micro-apps for text rating and storage",
+        "highlights": [
+          "Intuitive rating interface",
+          "Efficient local storage",
+          "Smooth animations"
+        ],
+        "technologies": ["Flutter", "Dart", "SQLite"]
+      }
+    ],
+    "skills": {
+      "iOS Development": ["Swift", "Objective-C", "SwiftUI", "UIKit", "Combine", "Async/Await", "Core Data", "HealthKit"],
+      "Architecture": ["MVVM", "MVC", "VIPER", "SOLID", "Clean Code", "TDD"],
+      "Tools & CI/CD": ["Xcode", "Fastlane", "GitLab CI", "GitHub Actions", "Buildkite", "TestFlight"],
+      "Backend": ["Java SpringBoot", "Node.js", "Ruby on Rails", "REST APIs", "Firebase"],
+      "Web": ["React", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap"],
+      "Other": ["Git", "Docker", "Postman", "Swagger", "macOS", "Linux"]
+    }
+  }
+}
