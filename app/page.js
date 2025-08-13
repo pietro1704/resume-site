@@ -361,7 +361,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
               <p className="text-slate-400">
-                © 2024 Pietro Pugliesi. {currentLang === 'pt' ? 'Todos os direitos reservados.' : 'All rights reserved.'}
+                © 2025 Pietro Pugliesi. {currentLang === 'pt' ? 'Todos os direitos reservados.' : 'All rights reserved.'}
               </p>
             </div>
             

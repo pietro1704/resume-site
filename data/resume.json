@@ -35,8 +35,8 @@
         "name": "Pinterest",
         "position": "iOS Developer (Pleno/Sênior)",
         "url": "https://pinterest.com",
-        "startDate": "2023-01-01",
-        "endDate": "2025-01-01",
+        "startDate": "2023-09-01",
+        "endDate": "2025-12-31",
         "summary": "Segundo líder técnico da equipe iOS mais produtiva do Pinterest",
         "highlights": [
           "Liderança na migração de Objective-C para Swift com arquitetura MVVM moderna",
@@ -65,7 +65,7 @@
       {
         "name": "Apple Developer Academy",
         "position": "Aluno e Residente",
-        "url": "https://developeracademy.pucpr.br",
+        "url": "https://developeracademy.eldorado.org.br/campinas/",
         "startDate": "2019-01-01",
         "endDate": "2021-12-31",
         "summary": "Programa oficial da Apple voltado à formação em desenvolvimento iOS",
@@ -167,8 +167,8 @@
         "name": "Pinterest",
         "position": "iOS Developer (Mid/Senior)",
         "url": "https://pinterest.com",
-        "startDate": "2023-01-01",
-        "endDate": "2025-01-01",
+        "startDate": "2023-09-01",
+        "endDate": "2025-12-31",
         "summary": "Second technical lead of Pinterest's most productive iOS team",
         "highlights": [
           "Spearheaded key parts of the migration from legacy Objective-C to modern Swift-based MVVM architecture",
@@ -197,7 +197,7 @@
       {
         "name": "Apple Developer Academy",
         "position": "Student & Resident",
-        "url": "https://developeracademy.pucpr.br",
+        "url": "https://developeracademy.eldorado.org.br/campinas/",
         "startDate": "2019-01-01",
         "endDate": "2021-12-31",
         "summary": "Apple's official development training program focused on iOS ecosystem",
