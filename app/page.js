@@ -11,15 +11,17 @@ export default function Home() {
   const data = resumeData[currentLang]
 
   useEffect(() => {
-    // Check for saved theme preference or default to dark mode
-    const savedTheme = localStorage.getItem('theme')
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-    
-    if (savedTheme) {
-      setDarkMode(savedTheme === 'dark')
+    // Detectar idioma do navegador
+    const browserLang = navigator.language || navigator.userLanguage
+    if (browserLang.startsWith('pt')) {
+      setCurrentLang('pt')
     } else {
-      setDarkMode(prefersDark)
+      setCurrentLang('en')
     }
+
+    // Detectar preferência de tema do sistema
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    setDarkMode(prefersDark)
   }, [])
 
   useEffect(() => {
