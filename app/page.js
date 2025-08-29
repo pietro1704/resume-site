@@ -144,14 +144,13 @@ export default function Home() {
 
               <div className="lg:col-span-4 xl:col-span-5 mt-12 lg:mt-0">
                 <div className="relative">
-                  <div className="w-80 h-80 mx-auto rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 flex items-center justify-center">
-                    {/* Placeholder for photo - replace with actual image */}
-                    <div className="text-slate-500 dark:text-slate-400 text-center">
-                      <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-slate-300 dark:bg-slate-600"></div>
-                      <p className="text-sm">Adicione sua foto aqui</p>
-                      <p className="text-xs mt-1">public/photo.jpg</p>
-                    </div>
-                  </div>
+                  <Image
+                    src="/photo.jpg"
+                    alt="Pietro Pugliesi"
+                    width={320}
+                    height={320}
+                    className="rounded-2xl object-cover mx-auto"
+                  />
                 </div>
               </div>
             </div>
