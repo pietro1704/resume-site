@@ -2,7 +2,7 @@ import './globals.css'
 
 export const metadata = {
   title: 'Pietro Pugliesi - iOS Developer & Computer Engineer',
-  description: 'Senior iOS Developer at Pinterest with expertise in Swift, MVVM architecture, and mobile app development.',
+  description: 'Senior iOS Developer at Pinterest with expertise in iOS development, testing (Unit and Integration), MVVM architecture, and mobile app development.',
 }
 
 export default function RootLayout({ children }) {

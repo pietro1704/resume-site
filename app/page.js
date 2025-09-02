@@ -2,14 +2,13 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import { FiGithub, FiLinkedin, FiMail, FiPhone, FiMapPin, FiExternalLink, FiDownload, FiMoon, FiSun, FiChevronDown, FiGlobe } from 'react-icons/fi'
+import { FiGithub, FiLinkedin, FiMail, FiPhone, FiMapPin, FiExternalLink, FiDownload, FiMoon, FiSun } from 'react-icons/fi'
 import resumeData from '../data/resume.json'
 
 export default function Home() {
   const [currentLang, setCurrentLang] = useState('pt')
   const [darkMode, setDarkMode] = useState(false)
   const [downloadLang, setDownloadLang] = useState('auto') // auto, pt, en
-  const [showDownloadMenu, setShowDownloadMenu] = useState(false)
   const data = resumeData[currentLang]
 
   useEffect(() => {
@@ -36,17 +35,6 @@ export default function Home() {
     }
   }, [darkMode])
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (showDownloadMenu && !event.target.closest('.relative')) {
-        setShowDownloadMenu(false)
-      }
-    }
-    
-    document.addEventListener('click', handleClickOutside)
-    return () => document.removeEventListener('click', handleClickOutside)
-  }, [showDownloadMenu])
-
   const toggleLanguage = () => {
     setCurrentLang(currentLang === 'pt' ? 'en' : 'pt')
   }
@@ -55,50 +43,33 @@ export default function Home() {
     setDarkMode(!darkMode)
   }
 
-  const downloadPDF = async (langOverride = null) => {
+  const downloadPDF = async (lang) => {
     try {
-      // Determinar idioma do download
-      let targetLang;
-      if (langOverride) {
-        targetLang = langOverride;
-      } else if (downloadLang === 'auto') {
-        targetLang = currentLang;
-      } else {
-        targetLang = downloadLang;
-      }
+      const fileName = lang === 'pt' 
+        ? 'pietro-cv-pt.pdf'
+        : 'pietro-cv-en.pdf';
 
-      const fileName = targetLang === 'pt' 
-        ? 'pietro-cv-ats-vagasAltoVolume-pt.html'
-        : 'pietro-cv-ats-vagasAltoVolume-en.html';
-      
       const response = await fetch(`/pdfs/${fileName}`);
       if (!response.ok) throw new Error('PDF not found');
-      
-      const htmlContent = await response.text();
-      
-      // Criar um blob com o conteúdo HTML
-      const blob = new Blob([htmlContent], { type: 'text/html' });
+
+      const blob = await response.blob();
       const url = window.URL.createObjectURL(blob);
-      
-      // Criar link para download
+
       const link = document.createElement('a');
       link.href = url;
-      link.download = `Pietro_Pugliesi_CV_${targetLang.toUpperCase()}.html`;
+      link.download = `Pietro_Pugliesi_CV_${lang.toUpperCase()}.pdf`;
       document.body.appendChild(link);
       link.click();
-      
-      // Cleanup
+
       document.body.removeChild(link);
       window.URL.revokeObjectURL(url);
-      setShowDownloadMenu(false);
-      
     } catch (error) {
       console.error('Erro ao baixar currículo:', error);
-      alert(currentLang === 'pt' 
+      alert(lang === 'pt' 
         ? 'Erro ao baixar currículo. Tente novamente.' 
         : 'Error downloading resume. Please try again.');
     }
-  }
+  };
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
@@ -172,58 +143,20 @@ export default function Home() {
                     {currentLang === 'pt' ? 'Entrar em contato' : 'Get in touch'}
                   </a>
                   
-                  <div className="relative">
+                  <div className="flex space-x-4">
                     <button
-                      onClick={() => setShowDownloadMenu(!showDownloadMenu)}
-                      className="inline-flex items-center px-6 py-3 border border-slate-300 dark:border-slate-600 text-base font-medium rounded-lg text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
+                      onClick={() => downloadPDF('pt')}
+                      className={`px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-slate-900 dark:bg-slate-700 hover:bg-slate-800 dark:hover:bg-slate-600 transition-colors ${currentLang === 'pt' ? 'ring-4 ring-blue-500' : ''}`}
                     >
-                      <FiDownload className="mr-2" />
-                      {currentLang === 'pt' ? 'Baixar CV' : 'Download CV'}
-                      <FiChevronDown className="ml-2" />
+                      🇧🇷 Baixar CV (PT)
                     </button>
-                    
-                    {showDownloadMenu && (
-                      <div className="absolute top-full mt-2 w-48 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 rounded-lg shadow-lg z-10">
-                        <button
-                          onClick={() => {
-                            setDownloadLang('auto')
-                            downloadPDF()
-                            setShowDownloadMenu(false)
-                          }}
-                          className="flex items-center w-full px-4 py-3 text-left text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 rounded-t-lg transition-colors"
-                        >
-                          <FiGlobe className="mr-3 text-slate-500" />
-                          {currentLang === 'pt' ? 'Automático' : 'Automatic'}
-                          {downloadLang === 'auto' && <span className="ml-auto text-blue-600 dark:text-blue-400">✓</span>}
-                        </button>
-                        
-                        <button
-                          onClick={() => {
-                            setDownloadLang('pt')
-                            downloadPDF('pt')
-                            setShowDownloadMenu(false)
-                          }}
-                          className="flex items-center w-full px-4 py-3 text-left text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
-                        >
-                          🇧🇷
-                          <span className="ml-3">Português</span>
-                          {downloadLang === 'pt' && <span className="ml-auto text-blue-600 dark:text-blue-400">✓</span>}
-                        </button>
-                        
-                        <button
-                          onClick={() => {
-                            setDownloadLang('en')
-                            downloadPDF('en')
-                            setShowDownloadMenu(false)
-                          }}
-                          className="flex items-center w-full px-4 py-3 text-left text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 rounded-b-lg transition-colors"
-                        >
-                          🇺🇸
-                          <span className="ml-3">English</span>
-                          {downloadLang === 'en' && <span className="ml-auto text-blue-600 dark:text-blue-400">✓</span>}
-                        </button>
-                      </div>
-                    )}
+
+                    <button
+                      onClick={() => downloadPDF('en')}
+                      className={`px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-slate-900 dark:bg-slate-700 hover:bg-slate-800 dark:hover:bg-slate-600 transition-colors ${currentLang === 'en' ? 'ring-4 ring-blue-500' : ''}`}
+                    >
+                      🇺🇸 Download CV (EN)
+                    </button>
                   </div>
                 </div>
 

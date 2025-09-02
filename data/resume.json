@@ -141,9 +141,9 @@
     ],
     "skills": {
       "iOS Development": [
-        "Swift 5.9",
+        "Swift",
         "Objective-C",
-        "SwiftUI 5.0",
+        "SwiftUI",
         "UIKit",
         "Combine",
         "Async/Await",
@@ -165,7 +165,9 @@
         "Code Review Leadership",
         "Performance Optimization",
         "Memory Management",
-        "Instruments Profiling"
+        "Instruments Profiling",
+        "Unit Testing",
+        "Integration Testing"
       ],
       "Architecture & Design": [
         "MVVM",
@@ -177,7 +179,7 @@
         "Protocol-Oriented Programming"
       ],
       "Tools & DevOps": [
-        "Xcode 15",
+        "Xcode",
         "Fastlane",
         "GitLab CI",
         "GitHub Actions",
@@ -349,9 +351,9 @@
     ],
     "skills": {
       "iOS Development": [
-        "Swift 5.9",
+        "Swift",
         "Objective-C",
-        "SwiftUI 5.0",
+        "SwiftUI",
         "UIKit",
         "Combine",
         "Async/Await",
@@ -373,7 +375,9 @@
         "Code Review Leadership",
         "Performance Optimization",
         "Memory Management",
-        "Instruments Profiling"
+        "Instruments Profiling",
+        "Unit Testing",
+        "Integration Testing"
       ],
       "Architecture & Design": [
         "MVVM",
@@ -385,7 +389,7 @@
         "Protocol-Oriented Programming"
       ],
       "Tools & DevOps": [
-        "Xcode 15",
+        "Xcode",
         "Fastlane",
         "GitLab CI",
         "GitHub Actions",
