@@ -419,37 +419,9 @@ function generateHybridSkillsTemplate(data, lang) {
 // Generate all templates
 console.log('🔄 Gerando templates de currículo minimalistas (padrões 2025)...');
 
-const templates = [
-  { 
-    name: 'pietro-cv-ats-vagasAltoVolume-pt.html', 
-    content: generateATSTemplate(resumeData.pt, 'pt'),
-    description: 'ATS-friendly para vagas com alto volume de candidatos'
-  },
-  { 
-    name: 'pietro-cv-ats-vagasAltoVolume-en.html', 
-    content: generateATSTemplate(resumeData.en, 'en'),
-    description: 'ATS-friendly for high-volume job applications'
-  },
-  { 
-    name: 'pietro-cv-casestudy-vagasLideranca-pt.html', 
-    content: generateCaseStudyTemplate(resumeData.pt, 'pt'),
-    description: 'Case study detalhado para vagas de liderança técnica/Tech Lead'
-  },
-  { 
-    name: 'pietro-cv-casestudy-vagasLideranca-en.html', 
-    content: generateCaseStudyTemplate(resumeData.en, 'en'),
-    description: 'Detailed case study for technical leadership/Tech Lead positions'
-  },
-  { 
-    name: 'pietro-cv-skills-vagasMuitasKeywords-pt.html', 
-    content: generateHybridSkillsTemplate(resumeData.pt, 'pt'),
-    description: 'Skills matrix para vagas com muitas keywords técnicas específicas'
-  },
-  { 
-    name: 'pietro-cv-skills-vagasMuitasKeywords-en.html', 
-    content: generateHybridSkillsTemplate(resumeData.en, 'en'),
-    description: 'Skills matrix for positions with many specific technical keywords'
-  }
+const atsFiles = [
+  'pietro-cv-ats-vagasAltoVolume-pt.pdf',
+  'pietro-cv-ats-vagasAltoVolume-en.pdf'
 ];
 
 // Ensure directory exists
@@ -459,10 +431,10 @@ if (!fs.existsSync(outputDir)) {
 }
 
 // Write all templates
-templates.forEach(template => {
-  const filePath = path.join(outputDir, template.name);
-  fs.writeFileSync(filePath, template.content);
-  console.log(`✅ Gerado: ${template.name}`);
+atsFiles.forEach(fileName => {
+  const filePath = path.join(outputDir, fileName);
+  fs.writeFileSync(filePath, generateATSTemplate(resumeData.pt, 'pt'));
+  console.log(`✅ Gerado: ${fileName}`);
 });
 
 console.log('🎉 Templates minimalistas gerados com sucesso!');
@@ -474,9 +446,9 @@ console.log('   • Layout ATS-friendly');
 console.log('   • Foco em métricas de impacto');
 console.log('   • Design minimalista profissional');
 console.log('\n🎯 QUANDO USAR CADA CURRÍCULO:');
-templates.forEach(template => {
-  console.log(`   • ${template.name}`);
-  console.log(`     ↳ ${template.description}\n`);
+atsFiles.forEach(fileName => {
+  console.log(`   • ${fileName}`);
+  console.log(`     ↳ ATS-friendly para vagas com alto volume de candidatos\n`);
 });
 
 // Generate PDFs using Puppeteer

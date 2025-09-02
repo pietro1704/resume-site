@@ -2,11 +2,11 @@
   "pt": {
     "basics": {
       "name": "Pietro Ruy Pugliesi",
-      "label": "Desenvolvedor iOS Sênior & Engenheiro de Computação",
+      "label": "Senior iOS Tech Lead | Scalable Mobile Architect | Remote Leadership (Global Teams)",
       "email": "pietroruypugliesi@gmail.com",
       "phone": "+55 (13) 98225-3655",
       "url": "https://github.com/pietro1704",
-      "summary": "Engenheiro iOS com experiência sênior internacional no Pinterest, referência técnica em migração Obj-C → Swift MVVM, liderança em features críticas e mentoria de novos devs. Reconhecido como membro mais produtivo da equipe global (50+ engenheiros)."
+      "summary": "Engenheiro iOS com experiência sênior internacional no Pinterest, referência técnica em migração Obj-C → Swift MVVM, liderança em features críticas e mentoria de novos devs. Reconhecido como membro mais produtivo da equipe global (50+ engenheiros). Remote-first culture, Distributed engineering leadership, Enterprise iOS apps, Scalable mobile architecture, CI/CD pipelines for iOS at scale, App Store release management, Cross-functional collaboration."
     },
     "work": [
       {
@@ -74,7 +74,7 @@
       }
     ],
     "skills": {
-      "iOS": ["Swift", "Objective-C", "SwiftUI", "UIKit", "Combine", "Async/Await", "Core Data", "HealthKit"],
+      "iOS": ["Swift", "Objective-C", "SwiftUI", "UIKit", "Combine", "Async/Await", "Core Data", "HealthKit", "App Store Connect", "Release Management"],
       "Arquitetura": ["MVVM", "MVC", "VIPER", "SOLID", "Clean Code", "TDD"],
       "Ferramentas": ["Xcode", "Fastlane", "GitLab CI", "GitHub Actions", "Buildkite", "TestFlight"],
       "Outros": ["Docker", "Git", "Linux", "Firebase", "REST APIs"]
@@ -83,11 +83,11 @@
   "en": {
     "basics": {
       "name": "Pietro Ruy Pugliesi",
-      "label": "Senior iOS Engineer & Computer Engineer",
+      "label": "Senior iOS Tech Lead | Scalable Mobile Architect | Remote Leadership (Global Teams)",
       "email": "pietroruypugliesi@gmail.com",
       "phone": "+55 (13) 98225-3655",
       "url": "https://github.com/pietro1704",
-      "summary": "Senior iOS Engineer at Pinterest, technical lead in Obj-C → Swift MVVM migration, core feature ownership, and mentorship. Recognized as top contributor within a 50+ global engineering team."
+      "summary": "Senior iOS Engineer at Pinterest, technical lead in Obj-C → Swift MVVM migration, core feature ownership, and mentorship. Recognized as top contributor within a 50+ global engineering team. Remote-first culture, Distributed engineering leadership, Enterprise iOS apps, Scalable mobile architecture, CI/CD pipelines for iOS at scale, App Store release management, Cross-functional collaboration."
     },
     "work": [
       {
@@ -155,7 +155,7 @@
       }
     ],
     "skills": {
-      "iOS": ["Swift", "Objective-C", "SwiftUI", "UIKit", "Combine", "Async/Await", "Core Data", "HealthKit"],
+      "iOS": ["Swift", "Objective-C", "SwiftUI", "UIKit", "Combine", "Async/Await", "Core Data", "HealthKit", "App Store Connect", "Release Management"],
       "Architecture": ["MVVM", "MVC", "VIPER", "SOLID", "Clean Code", "TDD"],
       "Tools": ["Xcode", "Fastlane", "GitLab CI", "GitHub Actions", "Buildkite", "TestFlight"],
       "Other": ["Docker", "Git", "Linux", "Firebase", "REST APIs"]

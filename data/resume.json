@@ -2,11 +2,11 @@
   "pt": {
     "basics": {
       "name": "Pietro Ruy Pugliesi",
-      "label": "Senior iOS Tech Lead • 5+ Anos • Liderança Remota",
+      "label": "Senior iOS Tech Lead | Scalable Mobile Architect | Liderança Remota Global",
       "email": "pietroruypugliesi@gmail.com",
       "phone": "+55 (13) 98225-3655",
       "url": "https://github.com/pietro1704",
-      "summary": "Senior iOS Tech Lead no Pinterest com 5+ anos de experiência escalando apps mobile para milhões de usuários. Liderei migração de arquitetura (Objective-C → Swift/MVVM) em equipe distribuída de 60+ engenheiros, reduzindo débito técnico em 40% e melhorando frequência de deploy em 25%. Expert em liderança técnica remota, mentorando equipes internacionais em múltiplos fusos horários.",
+      "summary": "Senior iOS Tech Lead no Pinterest com mais de 5 anos de experiência escalando aplicativos móveis para centenas de milhões de usuários em ambiente remote-first. Liderei migração de arquitetura (Objective-C → Swift/MVVM) em equipe distribuída de 60+ engenheiros, reduzindo débito técnico em 40% (~2.000 horas/ano economizadas) e aumentando frequência de deploy em 25%. Especialista em liderança técnica remota, mentorando equipes internacionais e reduzindo tempo de onboarding em 50%.",
       "location": {
         "city": "Santos",
         "region": "SP",
@@ -36,17 +36,30 @@
         "position": "Senior iOS Tech Lead",
         "url": "https://pinterest.com",
         "startDate": "2023-09-01",
-        "endDate": "2025-12-31",
-        "summary": "Tech Lead de equipe distribuída iOS em app com milhões de usuários ativos",
+        "endDate": "2025-09-02",
+        "summary": "Liderança técnica remota de equipe iOS distribuída em aplicativo global com 450M+ usuários ativos mensais.",
         "highlights": [
-          "🎯 Liderei migração de arquitetura (Objective-C → Swift/MVVM) em equipe distribuída de 60+ engenheiros, reduzindo débito técnico em 40% e melhorando frequência de deploy em 25%",
-          "🚀 Reimplementei 3 features core (Updates, Comments, Home) servindo 450M+ usuários mensais com 99.9% de taxa livre de crashes",
-          "👥 Estabeleci programa de mentoria remota: office hours semanais para 15+ engenheiros em 4 fusos horários, reduzindo tempo de onboarding em 50%",
-          "🔧 Liderei processo de code review: revisei 200+ PRs/mês, mantendo 95% de score de qualidade de código e aplicando padrões Clean Code",
-          "🧪 Implementei estratégia abrangente de testes: aumentei cobertura de testes unitários de 60% para 85%, reduzindo bugs de produção em 30%",
-          "♿ Impulsionei compliance de acessibilidade: atingimos padrões WCAG 2.1 AA em todas as features, apoiando 10M+ usuários com deficiências"
+          "Conduzi migração de arquitetura (Objective-C → Swift/MVVM) em equipe de 60+ engenheiros, reduzindo débito técnico em 40% (~2.000 horas/ano economizadas) e aumentando frequência de deploy em 25%.",
+          "Reimplementei 3 features core (Updates, Comments, Home) servindo 450M+ usuários mensais com 99.9% de crash-free rate, resultando em aumento de engajamento em 15%.",
+          "Estabeleci programa de mentoria remota com office hours semanais para 15+ engenheiros em 4 fusos horários, reduzindo tempo de onboarding em 50% (de 3 meses para 6 semanas).",
+          "Liderei processo de revisão de código: 200+ PRs/mês, mantendo 95% de score de qualidade e reduzindo bugs críticos em produção em 30%.",
+          "Aumentei cobertura de testes unitários de 60% para 85%, garantindo estabilidade e confiança no pipeline de entrega contínua.",
+          "Atingi conformidade WCAG 2.1 AA em todas as features, beneficiando 10M+ usuários com deficiências e melhorando a retenção em mercados globais.",
+          "Coordenei esforços com PM, Design e Data, influenciando roadmap global e priorizando iniciativas de alto impacto financeiro."
         ],
-        "technologies": ["Swift 5.9", "Objective-C", "SwiftUI", "UIKit", "MVVM Architecture", "Combine Framework", "Async/Await", "Unit Testing", "Snapshot Testing", "Texture (AsyncDisplayKit)", "Buildkite CI/CD", "Xcode 15"]
+        "technologies": [
+          "Swift",
+          "Objective-C",
+          "SwiftUI",
+          "UIKit",
+          "MVVM",
+          "Combine",
+          "Async/Await",
+          "Snapshot Testing",
+          "Texture (AsyncDisplayKit)",
+          "Buildkite CI/CD",
+          "Xcode"
+        ]
       },
       {
         "name": "Instituto de Pesquisas Eldorado",
@@ -54,13 +67,21 @@
         "url": "https://eldorado.org.br",
         "startDate": "2021-01-01",
         "endDate": "2023-01-01",
-        "summary": "Desenvolvimento de apps móveis e liderança técnica",
+        "summary": "Desenvolvimento de aplicativos iOS e liderança técnica.",
         "highlights": [
-          "Desenvolvimento dos apps WEMOB e Márcio Atalla",
-          "Líder técnico: onboarding, mentoria, revisão de código",
-          "Deploy com Fastlane, GitLab CI, TestFlight"
+          "Desenvolvi e publiquei os apps WEMOB (mobilidade elétrica) e Márcio Atalla (fitness/saúde).",
+          "Introduzi práticas de code review, mentoria de juniors e onboarding estruturado.",
+          "Implementei pipelines CI/CD com Fastlane, GitLab CI e TestFlight."
         ],
-        "technologies": ["SwiftUI", "UIKit", "Combine", "Async/Await", "REST", "CI/CD", "Fastlane"]
+        "technologies": [
+          "SwiftUI",
+          "UIKit",
+          "Combine",
+          "Async/Await",
+          "REST",
+          "CI/CD",
+          "Fastlane"
+        ]
       },
       {
         "name": "Apple Developer Academy",
@@ -68,15 +89,21 @@
         "url": "https://developeracademy.eldorado.org.br/campinas/",
         "startDate": "2019-01-01",
         "endDate": "2021-12-31",
-        "summary": "Programa oficial da Apple voltado à formação em desenvolvimento iOS",
+        "summary": "Programa oficial da Apple com foco em desenvolvimento iOS e mentoria.",
         "highlights": [
-          "Formação sólida em Swift, UIKit e desenvolvimento orientado ao produto",
-          "Aprendizado de design centrado no usuário e acessibilidade",
-          "Desenvolvimento de diversos apps iOS, do protótipo ao MVP funcional",
-          "Primeiros contatos com Clean Code, princípios SOLID e metodologias ágeis",
-          "Como residente, ajudei novos alunos e colaborei em projetos internos"
+          "Formação intensiva em Swift, UIKit, SwiftUI e desenvolvimento orientado a produto.",
+          "Entrega de 5+ apps iOS do protótipo ao MVP seguindo HIG.",
+          "Aplicação de design thinking e práticas de acessibilidade.",
+          "Promoção a Residente, atuando como mentor e colaborando em projetos internos."
         ],
-        "technologies": ["Swift", "UIKit", "SwiftUI", "HIG", "Design Thinking", "SOLID"]
+        "technologies": [
+          "Swift",
+          "UIKit",
+          "SwiftUI",
+          "Human Interface Guidelines",
+          "Design Thinking",
+          "SOLID"
+        ]
       }
     ],
     "education": [
@@ -91,55 +118,103 @@
     "projects": [
       {
         "name": "Breviary App",
-        "description": "App iOS para leituras litúrgicas com suporte a versões antigas do iOS",
+        "description": "Aplicativo iOS com suporte a versões legadas e CI/CD automatizado.",
         "highlights": [
-          "Suporte completo para iOS legacy",
-          "Pipeline CI/CD automatizado",
-          "Interface limpa e acessível"
+          "Compatibilidade total com versões antigas de iOS.",
+          "Pipeline CI/CD automatizado.",
+          "Interface acessível conforme WCAG 2.1 AA."
         ],
         "technologies": ["Swift", "UIKit", "CI/CD"],
         "url": "https://github.com/pietro1704/breviary"
       },
       {
         "name": "Site Pessoal Rails",
-        "description": "Website pessoal desenvolvido em Ruby on Rails com frontend React",
+        "description": "Website pessoal em Ruby on Rails e React.",
         "highlights": [
-          "Frontend moderno com React",
-          "Deploy automatizado no Heroku",
-          "Design responsivo"
+          "Frontend moderno em React.",
+          "Deploy automatizado no Heroku.",
+          "Design responsivo, mobile-first."
         ],
         "technologies": ["Ruby on Rails", "React", "Heroku"],
         "url": "https://pietropugliesi.dev"
-      },
-      {
-        "name": "Flutter Text Rating",
-        "description": "Micro apps em Flutter para avaliação e armazenamento de textos",
-        "highlights": [
-          "Interface intuitiva para rating",
-          "Armazenamento local eficiente",
-          "Animações suaves"
-        ],
-        "technologies": ["Flutter", "Dart", "SQLite"]
       }
     ],
     "skills": {
-      "iOS Development": ["Swift 5.9", "Objective-C", "SwiftUI 5.0", "UIKit", "Combine Framework", "Async/Await", "Core Data", "Texture (AsyncDisplayKit)", "URLSession", "Grand Central Dispatch"],
-      "Testing & Quality": ["XCTest", "Snapshot Testing", "UI Testing", "TDD", "Code Review Leadership", "Performance Optimization", "Memory Management", "Instruments Profiling"],
-      "Architecture & Design": ["MVVM", "MVC", "VIPER", "SOLID Principles", "Clean Architecture", "Dependency Injection", "Protocol-Oriented Programming"],
-      "Tools & DevOps": ["Xcode 15", "Fastlane", "GitLab CI", "GitHub Actions", "Buildkite", "TestFlight", "App Store Connect", "Firebase", "CocoaPods", "Swift Package Manager"],
-      "Accessibility & Standards": ["VoiceOver", "Dynamic Type", "Accessibility Inspector", "WCAG 2.1 AA", "HIG Compliance"],
-      "Remote Leadership": ["Technical Mentoring", "Distributed Team Management", "Cross-timezone Collaboration", "Agile/Scrum Leadership", "Onboarding Program Design"],
-      "Languages": ["Portuguese (Native)", "English (Fluent - C1/C2)"]
-    }
+      "iOS Development": [
+        "Swift 5.9",
+        "Objective-C",
+        "SwiftUI 5.0",
+        "UIKit",
+        "Combine",
+        "Async/Await",
+        "Core Data",
+        "Texture (AsyncDisplayKit)",
+        "URLSession",
+        "GCD",
+        "SwiftData",
+        "Swift Charts",
+        "WidgetKit",
+        "App Intents",
+        "Core ML"
+      ],
+      "Testing & Quality": [
+        "XCTest",
+        "Snapshot Testing",
+        "UI Testing",
+        "TDD",
+        "Code Review Leadership",
+        "Performance Optimization",
+        "Memory Management",
+        "Instruments Profiling"
+      ],
+      "Architecture & Design": [
+        "MVVM",
+        "MVC",
+        "VIPER",
+        "SOLID Principles",
+        "Clean Architecture",
+        "Dependency Injection",
+        "Protocol-Oriented Programming"
+      ],
+      "Tools & DevOps": [
+        "Xcode 15",
+        "Fastlane",
+        "GitLab CI",
+        "GitHub Actions",
+        "Buildkite",
+        "TestFlight",
+        "App Store Connect",
+        "Firebase",
+        "CocoaPods",
+        "Swift Package Manager"
+      ],
+      "Accessibility & Standards": [
+        "VoiceOver",
+        "Dynamic Type",
+        "Accessibility Inspector",
+        "WCAG 2.1 AA",
+        "Apple HIG Compliance"
+      ],
+      "Remote Leadership": [
+        "Mentoria Técnica",
+        "Gestão de Equipes Distribuídas",
+        "Colaboração Multifunção",
+        "Agile/Scrum Leadership",
+        "Design de Programas de Onboarding",
+        "Cultura Remote-First"
+      ],
+      "Languages": ["Português (Nativo)", "Inglês (Fluente - C1/C2)"]
+    },
+    "softSkills": "Comunicador forte, mindset async-first, apaixonado por mentoria e cultura de engenharia inclusiva."
   },
   "en": {
     "basics": {
       "name": "Pietro Ruy Pugliesi",
-      "label": "Senior iOS Tech Lead • 5+ Years • Remote-First Leadership",
+      "label": "Senior iOS Tech Lead | Scalable Mobile Architect | Remote-First Leadership",
       "email": "pietroruypugliesi@gmail.com",
       "phone": "+55 (13) 98225-3655",
       "url": "https://github.com/pietro1704",
-      "summary": "Senior iOS Tech Lead at Pinterest with 5+ years experience scaling mobile apps for millions of users. Led architecture migration (Objective-C → Swift/MVVM) across 60-engineer distributed team, reducing technical debt by 40% and improving deployment frequency by 25%. Expert in remote technical leadership, mentoring international teams across multiple timezones.",
+      "summary": "Senior iOS Tech Lead with 5+ years of experience scaling mobile apps to hundreds of millions of users in a remote-first environment. Led large-scale architecture migration (Objective-C → Swift/MVVM) for a distributed team of 60+ engineers, reducing technical debt by 40% (~2,000 annual hours saved) and improving deployment frequency by 25%. Expert in distributed leadership, mentoring international teams across multiple time zones, cutting onboarding time by 50%, and delivering high-quality, accessible mobile experiences.",
       "location": {
         "city": "Santos",
         "region": "SP",
@@ -169,17 +244,30 @@
         "position": "Senior iOS Tech Lead",
         "url": "https://pinterest.com",
         "startDate": "2023-09-01",
-        "endDate": "2025-12-31",
-        "summary": "Senior iOS Tech Lead managing distributed engineering team for global-scale mobile application",
+        "endDate": "2025-09-02",
+        "summary": "Remote-first technical leadership for Pinterest iOS app with 450M+ monthly active users.",
         "highlights": [
-          "🎯 Led architecture migration (Objective-C → Swift/MVVM) across 60-engineer distributed team, reducing technical debt by 40% and improving deployment frequency by 25%",
-          "🚀 Reimplemented 3 core features (Updates, Comments, Home) serving 450M+ monthly active users with 99.9% crash-free rate",
-          "👥 Established remote mentorship program: weekly office hours for 15+ engineers across 4 timezones, reducing onboarding time by 50%",
-          "🔧 Led code review process: reviewed 200+ PRs/month, maintaining 95% code quality score and enforcing Clean Code standards",
-          "🧪 Implemented comprehensive testing strategy: increased unit test coverage from 60% to 85%, reducing production bugs by 30%",
-          "♿ Drove accessibility compliance: achieved WCAG 2.1 AA standards across all features, supporting 10M+ users with disabilities"
+          "Led Objective-C → Swift/MVVM migration for 60+ engineers, reducing technical debt by 40% (~2,000 annual hours saved) and increasing deployment frequency by 25%.",
+          "Rebuilt 3 core features (Updates, Comments, Home) used by 450M+ users with 99.9% crash-free rate, resulting in 15% higher user engagement.",
+          "Implemented global mentorship program with weekly office hours across 4 time zones, reducing onboarding time by 50% (3 months → 6 weeks).",
+          "Reviewed 200+ pull requests per month, ensuring 95% code quality adherence and reducing critical production bugs by 30%.",
+          "Increased unit test coverage from 60% to 85%, ensuring stability and confidence in the continuous delivery pipeline.",
+          "Achieved WCAG 2.1 AA accessibility compliance across all features, benefiting 10M+ users with disabilities and improving retention in global markets.",
+          "Collaborated cross-functionally with PM, Design, and Data teams to influence the global roadmap, prioritizing high-impact initiatives."
         ],
-        "technologies": ["Swift 5.9", "Objective-C", "SwiftUI", "UIKit", "MVVM Architecture", "Combine Framework", "Async/Await", "Unit Testing", "Snapshot Testing", "Texture (AsyncDisplayKit)", "Buildkite CI/CD", "Xcode 15"]
+        "technologies": [
+          "Swift",
+          "Objective-C",
+          "SwiftUI",
+          "UIKit",
+          "MVVM",
+          "Combine",
+          "Async/Await",
+          "Snapshot Testing",
+          "Texture (AsyncDisplayKit)",
+          "Buildkite CI/CD",
+          "Xcode"
+        ]
       },
       {
         "name": "Instituto de Pesquisas Eldorado",
@@ -187,13 +275,21 @@
         "url": "https://eldorado.org.br",
         "startDate": "2021-01-01",
         "endDate": "2023-01-01",
-        "summary": "Mobile app development and technical leadership",
+        "summary": "iOS developer delivering production apps and establishing technical best practices.",
         "highlights": [
-          "Led development of 2 production mobile applications: WEMOB (electric mobility) and Márcio Atalla (health/fitness)",
-          "Established technical leadership practices: mentoring junior developers, streamlining onboarding processes, conducting comprehensive code reviews",
-          "Implemented robust CI/CD pipeline using Fastlane, GitLab CI, and TestFlight for automated deployment and quality assurance"
+          "Developed and launched two production apps: WEMOB (electric mobility) and Márcio Atalla (health/fitness).",
+          "Introduced code review practices, mentored juniors, and streamlined onboarding.",
+          "Implemented CI/CD pipelines using Fastlane, GitLab CI, and TestFlight."
         ],
-        "technologies": ["SwiftUI", "UIKit", "Combine", "Async/Await", "REST", "CI/CD", "Fastlane"]
+        "technologies": [
+          "SwiftUI",
+          "UIKit",
+          "Combine",
+          "Async/Await",
+          "REST",
+          "CI/CD",
+          "Fastlane"
+        ]
       },
       {
         "name": "Apple Developer Academy",
@@ -201,15 +297,21 @@
         "url": "https://developeracademy.eldorado.org.br/campinas/",
         "startDate": "2019-01-01",
         "endDate": "2021-12-31",
-        "summary": "Apple's official development training program focused on iOS ecosystem",
+        "summary": "Apple's official iOS development program with emphasis on product-driven engineering and mentorship.",
         "highlights": [
-          "Completed intensive iOS development program: mastered Swift, UIKit, and product-driven engineering principles",
-          "Applied design thinking methodology and inclusive design practices to create accessible mobile solutions",
-          "Delivered 5+ iOS applications from concept to MVP, following Apple's Human Interface Guidelines",
-          "Gained foundational expertise in clean code architecture, SOLID principles, and agile development methodologies",
-          "Promoted to resident mentor role: guided new cohort of developers and collaborated on internal academy projects"
+          "Completed intensive training in Swift, UIKit, SwiftUI, and product-driven development.",
+          "Delivered 5+ iOS apps from concept to MVP following Apple's HIG.",
+          "Applied design thinking and accessibility-first practices.",
+          "Promoted to Resident, mentoring new cohorts and collaborating on academy-wide projects."
         ],
-        "technologies": ["Swift", "UIKit", "SwiftUI", "HIG", "Design Thinking", "SOLID"]
+        "technologies": [
+          "Swift",
+          "UIKit",
+          "SwiftUI",
+          "Human Interface Guidelines",
+          "Design Thinking",
+          "SOLID"
+        ]
       }
     ],
     "education": [
@@ -224,45 +326,93 @@
     "projects": [
       {
         "name": "Breviary App",
-        "description": "iOS app for liturgy readings with legacy iOS support",
+        "description": "iOS app with legacy OS support and CI/CD automation.",
         "highlights": [
-          "Full support for legacy iOS versions",
-          "Automated CI/CD pipeline",
-          "Clean and accessible interface"
+          "Full support for older iOS versions.",
+          "Implemented CI/CD pipelines with automation.",
+          "Delivered accessible UI compliant with WCAG 2.1 AA."
         ],
         "technologies": ["Swift", "UIKit", "CI/CD"],
         "url": "https://github.com/pietro1704/breviary"
       },
       {
         "name": "Personal Rails Website",
-        "description": "Personal website built with Ruby on Rails and React frontend",
+        "description": "Portfolio website built with Ruby on Rails and React frontend.",
         "highlights": [
-          "Modern React frontend",
-          "Automated Heroku deployment",
-          "Responsive design"
+          "Modern React frontend.",
+          "Automated deployment with Heroku.",
+          "Responsive, mobile-first design."
         ],
         "technologies": ["Ruby on Rails", "React", "Heroku"],
         "url": "https://pietropugliesi.dev"
-      },
-      {
-        "name": "Flutter Text Rating",
-        "description": "Flutter micro-apps for text rating and storage",
-        "highlights": [
-          "Intuitive rating interface",
-          "Efficient local storage",
-          "Smooth animations"
-        ],
-        "technologies": ["Flutter", "Dart", "SQLite"]
       }
     ],
     "skills": {
-      "iOS Development": ["Swift 5.9", "Objective-C", "SwiftUI 5.0", "UIKit", "Combine Framework", "Async/Await", "Core Data", "Texture (AsyncDisplayKit)", "URLSession", "Grand Central Dispatch"],
-      "Testing & Quality": ["XCTest", "Snapshot Testing", "UI Testing", "TDD", "Code Review Leadership", "Performance Optimization", "Memory Management", "Instruments Profiling"],
-      "Architecture & Design": ["MVVM", "MVC", "VIPER", "SOLID Principles", "Clean Architecture", "Dependency Injection", "Protocol-Oriented Programming"],
-      "Tools & DevOps": ["Xcode 15", "Fastlane", "GitLab CI", "GitHub Actions", "Buildkite", "TestFlight", "App Store Connect", "Firebase", "CocoaPods", "Swift Package Manager"],
-      "Accessibility & Standards": ["VoiceOver", "Dynamic Type", "Accessibility Inspector", "WCAG 2.1 AA", "HIG Compliance"],
-      "Remote Leadership": ["Technical Mentoring", "Distributed Team Management", "Cross-timezone Collaboration", "Agile/Scrum Leadership", "Onboarding Program Design"],
+      "iOS Development": [
+        "Swift 5.9",
+        "Objective-C",
+        "SwiftUI 5.0",
+        "UIKit",
+        "Combine",
+        "Async/Await",
+        "Core Data",
+        "Texture (AsyncDisplayKit)",
+        "URLSession",
+        "GCD",
+        "SwiftData",
+        "Swift Charts",
+        "WidgetKit",
+        "App Intents",
+        "Core ML"
+      ],
+      "Testing & Quality": [
+        "XCTest",
+        "Snapshot Testing",
+        "UI Testing",
+        "TDD",
+        "Code Review Leadership",
+        "Performance Optimization",
+        "Memory Management",
+        "Instruments Profiling"
+      ],
+      "Architecture & Design": [
+        "MVVM",
+        "MVC",
+        "VIPER",
+        "SOLID Principles",
+        "Clean Architecture",
+        "Dependency Injection",
+        "Protocol-Oriented Programming"
+      ],
+      "Tools & DevOps": [
+        "Xcode 15",
+        "Fastlane",
+        "GitLab CI",
+        "GitHub Actions",
+        "Buildkite",
+        "TestFlight",
+        "App Store Connect",
+        "Firebase",
+        "CocoaPods",
+        "Swift Package Manager"
+      ],
+      "Accessibility & Standards": [
+        "VoiceOver",
+        "Dynamic Type",
+        "Accessibility Inspector",
+        "WCAG 2.1 AA",
+        "Apple HIG Compliance"
+      ],
+      "Remote Leadership": [
+        "Technical Mentoring",
+        "Distributed Team Management",
+        "Cross-functional Collaboration",
+        "Agile/Scrum Leadership",
+        "Onboarding Program Design",
+        "Remote-first Culture"
+      ],
       "Languages": ["Portuguese (Native)", "English (Fluent - C1/C2)"]
-    }
+    },
+    "softSkills": "Strong communicator, async-first mindset, passionate about mentoring and inclusive engineering culture."
   }
 }

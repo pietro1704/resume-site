@@ -15,8 +15,8 @@ if (!fs.existsSync(publicDir)) {
 
 // Copiar apenas os arquivos ATS (para download geral)
 const atsFiles = [
-  'pietro-cv-ats-vagasAltoVolume-pt.html',
-  'pietro-cv-ats-vagasAltoVolume-en.html'
+  'pietro-cv-ats-vagasAltoVolume-pt.pdf',
+  'pietro-cv-ats-vagasAltoVolume-en.pdf'
 ];
 
 atsFiles.forEach(fileName => {
