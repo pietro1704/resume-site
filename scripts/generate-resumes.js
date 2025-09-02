@@ -577,6 +577,16 @@ async function generatePDFs() {
   const publicResumeTarget = path.join(publicDir, 'pietro-cv-general.pdf');
   fs.copyFileSync(generalResumeTarget, publicResumeTarget);
   console.log(`✅ Cópia criada em public/pdfs: ${publicResumeTarget}`);
+
+  // Copiar os currículos gerados para o diretório public/pdfs
+  const publicPtResume = path.join(publicDir, 'pietro-cv-pt.pdf');
+  const publicEnResume = path.join(publicDir, 'pietro-cv-en.pdf');
+
+  fs.copyFileSync(ptResumeTarget, publicPtResume);
+  console.log(`✅ Cópia criada: ${publicPtResume}`);
+
+  fs.copyFileSync(enResumeTarget, publicEnResume);
+  console.log(`✅ Cópia criada: ${publicEnResume}`);
 }
 
 generatePDFs().catch(err => console.error('Erro ao gerar PDFs:', err));

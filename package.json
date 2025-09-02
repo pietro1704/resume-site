@@ -6,15 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "export": "next export",
     "pdf": "node scripts/generate-resumes.js",
-    "copy-pdfs": "mkdir -p out/pdfs && cp pdfs/*.pdf pdfs/*.zip out/pdfs",
-    "copy-pdfs-public": "mkdir -p public/pdfs && cp pdfs/*.pdf pdfs/*.zip public/pdfs",
-    "clean-html": "rm -f out/pdfs/*.html public/pdfs/*.html",
-    "build-all": "npm run pdf && npm run build && npm run copy-pdfs && npm run copy-pdfs-public && npm run clean-html",
-    "watch-resume": "node scripts/watch-resume.js",
-    "prod": "npm run pdf && npm run build && npm run copy-pdfs && npx serve out"
+    "prod": "node scripts/generate-resumes.js && npm run build && npx serve out"
   },
   "dependencies": {
     "archiver": "^5.3.1",
