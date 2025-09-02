@@ -536,6 +536,47 @@ async function generatePDFs() {
   await archive.finalize();
 
   console.log('🎉 PDFs gerados com sucesso em todas as pastas!');
+
+  // Criar uma cópia do currículo geral no idioma correto como pietro-cv-general.pdf
+  const generalResumeSourcePT = path.join(outputDirs[0], 'pietro-cv-ats-vagasAltoVolume-pt.pdf');
+  const generalResumeSourceEN = path.join(outputDirs[0], 'pietro-cv-ats-vagasAltoVolume-en.pdf');
+  const generalResumeTarget = path.join(outputDirs[0], 'pietro-cv-general.pdf');
+
+  if (fs.existsSync(generalResumeSourcePT) && fs.existsSync(generalResumeSourceEN)) {
+    const source = resumeData.lang === 'pt' ? generalResumeSourcePT : generalResumeSourceEN;
+    fs.copyFileSync(source, generalResumeTarget);
+    console.log(`✅ Cópia criada: ${generalResumeTarget}`);
+  } else {
+    console.error('❌ Arquivo fonte para pietro-cv-general.pdf não encontrado em ambos os idiomas.');
+  }
+
+  // Criar cópias do currículo geral como pietro-cv-pt.pdf e pietro-cv-en.pdf
+  const ptResumeTarget = path.join(outputDirs[0], 'pietro-cv-pt.pdf');
+  const enResumeTarget = path.join(outputDirs[0], 'pietro-cv-en.pdf');
+
+  if (fs.existsSync(generalResumeSourcePT)) {
+    fs.copyFileSync(generalResumeSourcePT, ptResumeTarget);
+    console.log(`✅ Cópia criada: ${ptResumeTarget}`);
+  } else {
+    console.error('❌ Arquivo fonte para pietro-cv-pt.pdf não encontrado.');
+  }
+
+  if (fs.existsSync(generalResumeSourceEN)) {
+    fs.copyFileSync(generalResumeSourceEN, enResumeTarget);
+    console.log(`✅ Cópia criada: ${enResumeTarget}`);
+  } else {
+    console.error('❌ Arquivo fonte para pietro-cv-en.pdf não encontrado.');
+  }
+
+  // Copiar o currículo geral para o diretório public/pdfs
+  const publicDir = path.join(__dirname, '../public/pdfs');
+  if (!fs.existsSync(publicDir)) {
+    fs.mkdirSync(publicDir, { recursive: true });
+  }
+
+  const publicResumeTarget = path.join(publicDir, 'pietro-cv-general.pdf');
+  fs.copyFileSync(generalResumeTarget, publicResumeTarget);
+  console.log(`✅ Cópia criada em public/pdfs: ${publicResumeTarget}`);
 }
 
 generatePDFs().catch(err => console.error('Erro ao gerar PDFs:', err));
