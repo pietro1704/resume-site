@@ -1,223 +1,128 @@
 # Pietro Pugliesi - iOS Developer Portfolio
 
-Modern, responsive portfolio website built with Next.js App Router, featuring bilingual support (Portuguese/English) and dark/light mode.
+## 🚀 Instruções Rápidas
 
-## 🚀 Features
-
-- 🌍 **Bilingual support** (PT/EN) with toggle
-- 🌙 **Dark/Light mode** with system preference detection
-- 📱 **Fully responsive** design (mobile-first)
-- ⚡ **Optimized for Cloudflare Pages** deployment
-- 🎨 **Modern navy/slate** color scheme
-- 📊 **JSON-based** content management
-- 🔧 **Next.js App Router** with static export
-- 🎯 **iOS Developer** focused design
-
-## 🛠️ Tech Stack
-
-- **Framework:** Next.js 14 (App Router)
-- **Styling:** Tailwind CSS
-- **Icons:** React Icons (Feather)
-- **Deployment:** Cloudflare Pages
-- **Type:** Static Site Generation (SSG)
-
-## 📁 Project Structure
-
-```
-pietro-portfolio/
-├── app/
-│   ├── globals.css
-│   ├── layout.js
-│   └── page.js
-├── data/
-│   └── resume.json
-├── public/
-│   └── (add your photo here)
-├── .gitignore
-├── next.config.js
-├── package.json
-├── postcss.config.js
-├── tailwind.config.js
-└── README.md
-```
-
-## 🏁 Getting Started
-
-### 1. Install Dependencies
+### **Desenvolvimento**
 ```bash
 npm install
+npm run dev                    # Site localhost:3000
+npm run watch-resume           # Monitor automático (outro terminal)
 ```
 
-### 2. Add Your Photo
-Add your photo to the `public/` folder and update the image placeholder in `app/page.js`:
-
-```jsx
-// Replace the placeholder div with:
-<Image
-  src="/your-photo.jpg"
-  alt="Pietro Pugliesi"
-  width={320}
-  height={320}
-  className="rounded-2xl object-cover"
-/>
-```
-
-### 3. Run Development Server
+### **Gerar PDFs**
 ```bash
-npm run dev
+npm run pdf                    # Gera 6 currículos otimizados
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to see the result.
-
-### 4. Customize Content
-Edit `data/resume.json` to update:
-- Personal information
-- Work experience
-- Projects
-- Skills
-- Contact details
-
-## 🌐 Deployment to Cloudflare Pages
-
-### Method 1: GitHub Integration (Recommended)
-
-1. **Push to GitHub:**
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git branch -M main
-   git remote add origin https://github.com/yourusername/pietro-portfolio.git
-   git push -u origin main
-   ```
-
-2. **Connect to Cloudflare Pages:**
-   - Go to [Cloudflare Dashboard](https://dash.cloudflare.com/)
-   - Navigate to **Workers & Pages**
-   - Click **Create application** > **Pages** > **Connect to Git**
-   - Select your GitHub repository
-   - Configure build settings:
-     - **Build command:** `npm run build`
-     - **Build output directory:** `out`
-     - **Framework preset:** Next.js (Static HTML Export)
-
-3. **Deploy:**
-   - Click **Save and Deploy**
-   - Your site will be available at `your-project.pages.dev`
-
-### Method 2: Direct Upload
-
-1. **Build the project:**
-   ```bash
-   npm run build
-   ```
-
-2. **Upload the `out` folder** to Cloudflare Pages dashboard
-
-### Adding Custom Domain
-
-1. In Cloudflare Pages dashboard, go to **Custom domains**
-2. Click **Set up a custom domain**
-3. Add your domain (e.g., `pietropugliesi.dev`)
-4. Follow DNS configuration instructions
-5. SSL certificate will be generated automatically
-
-## 🎨 Customization
-
-### Colors
-The design uses a navy/slate color scheme. To customize, edit `tailwind.config.js`:
-
-```javascript
-colors: {
-  slate: {
-    // Your custom colors here
-  }
-}
-```
-
-### Content
-All content is managed through `data/resume.json`. The structure supports:
-- Basic information
-- Work experience with highlights and technologies
-- Personal projects
-- Skills categorization
-- Social media profiles
-
-### Styling
-- **Global styles:** `app/globals.css`
-- **Component styles:** Tailwind classes in `app/page.js`
-- **Dark mode:** Automatic with `dark:` classes
-
-## 📊 Performance Features
-
-- **Static Site Generation** for fast loading
-- **Image optimization** with Next.js Image component
-- **Automatic code splitting**
-- **CSS optimization** with Tailwind CSS
-- **Smooth scrolling** navigation
-- **Responsive design** for all devices
-
-## 🔧 Development Commands
-
+### **Deploy Produção**
 ```bash
-# Development server
-npm run dev
-
-# Production build
-npm run build
-
-# Start production server locally
-npm start
-
-# Linting
-npm run lint
+npm run build-all              # Gera PDFs + build (cria pasta 'out')
+# Upload da pasta 'out' no Cloudflare Pages
 ```
 
-## 📝 Content Management
+### **Cloudflare Pages**
+1. Conectar GitHub repo
+2. Build command: `npm run build-all`
+3. Build output directory: `out`
 
-The `resume.json` file follows a structured format:
+## Configuração para Cloudflare Pages
 
-```json
-{
-  "pt": {
-    "basics": { /* personal info */ },
-    "work": [ /* work experience */ ],
-    "projects": [ /* personal projects */ ],
-    "skills": { /* categorized skills */ }
-  },
-  "en": { /* English version */ }
-}
+### Comando de Build
+Certifique-se de configurar o comando de build no Cloudflare Pages como:
+
+```
+npm run build-all
 ```
 
-## 🌍 Bilingual Support
+### Diretório de Saída
+Configure o diretório de saída como:
 
-- Language toggle in header
-- Persistent language preference (localStorage)
-- Complete translation for all sections
-- SEO-friendly with proper lang attributes
+```
+out
+```
 
-## 📱 Mobile Optimization
+### Endpoints para Download de PDFs
+Os seguintes PDFs estão disponíveis para download direto. Apenas quem possui o link pode acessá-los:
 
-- **Mobile-first** responsive design
-- **Touch-friendly** interactive elements
-- **Optimized typography** for small screens
-- **Collapsible navigation** on mobile
+1. **ATS-friendly para vagas com alto volume de candidatos (PT)**:
+   - [Download](https://pietro-portfolio.pages.dev/pdfs/download-1)
 
-## 🚀 Performance Tips
+2. **ATS-friendly para vagas com alto volume de candidatos (EN)**:
+   - [Download](https://pietro-portfolio.pages.dev/pdfs/download-2)
 
-1. **Optimize images** before adding to `public/`
-2. **Keep JSON data** lean and relevant
-3. **Use WebP format** for photos when possible
-4. **Test on mobile devices** regularly
+3. **Case study detalhado para vagas de liderança técnica (PT)**:
+   - [Download](https://pietro-portfolio.pages.dev/pdfs/download-3)
 
-## 📄 License
+4. **Case study detalhado para vagas de liderança técnica (EN)**:
+   - [Download](https://pietro-portfolio.pages.dev/pdfs/download-4)
 
-MIT License - feel free to use this template for your own portfolio!
+5. **Skills matrix para vagas com muitas keywords técnicas específicas (PT)**:
+   - [Download](https://pietro-portfolio.pages.dev/pdfs/download-5)
 
-## 🤝 Contributing
+6. **Skills matrix para vagas com muitas keywords técnicas específicas (EN)**:
+   - [Download](https://pietro-portfolio.pages.dev/pdfs/download-6)
 
-Feel free to submit issues and pull requests to improve this template.
+7. **Todos os PDFs em um único arquivo ZIP**:
+   - [Download](https://pietro-portfolio.pages.dev/pdfs/download)
 
 ---
 
-**Built with ❤️ for iOS Developers**
+## 📋 Sobre o Projeto
+
+Sistema de portfólio + 6 currículos automáticos para Senior iOS Developer, otimizado para vagas internacionais 100% remotas.
+
+**Single source of truth:** `data/resume.json`
+
+## 🎯 3 Tipos de Currículo
+
+| Template | Quando Usar |
+|----------|-------------|
+| **ATS - Alto Volume** | FAANG, startups, empresas grandes |
+| **Case Study - Liderança** | Tech Lead, Staff Engineer |
+| **Skills Matrix - Keywords** | Vagas com lista extensa de techs |
+
+## 🛠️ Tech Stack
+
+- Next.js 14 + Tailwind CSS
+- HTML templates otimizados para PDF
+- Scripts Node.js para automação
+
+## 📁 Estrutura
+
+```
+├── data/resume.json           # 📊 Dados únicos
+├── pdfs/                      # 📄 6 currículos gerados
+├── public/pdfs/               # 📱 Download via site
+├── scripts/                   # 🤖 Automação
+└── out/                       # 🚀 Deploy (após build)
+```
+
+## ⚡ Comandos
+
+```bash
+npm run dev              # Desenvolvimento
+npm run pdf              # Gerar currículos
+npm run build-all        # Build completo
+npm run watch-resume     # Monitor automático
+```
+
+## 🌍 Features
+
+- Site bilíngue (PT/EN) com toggle
+- Dark/Light mode automático
+- Download inteligente (currículo ATS no idioma correto)
+- 6 templates estratégicos para diferentes vagas
+- Métricas quantificadas (Pinterest scale)
+- ATS-friendly (zero gráficos, fonte Arial)
+
+## 📊 Highlights
+
+- **Pinterest Tech Lead:** 450M+ usuários, 60+ engenheiros
+- **Architecture Migration:** Obj-C → Swift/MVVM
+- **Remote Leadership:** 4 timezones, 15+ mentees
+- **Quality:** 95% code score, 85% test coverage
+- **International:** English C1/C2, distributed teams
+
+---
+
+**Otimizado para Senior iOS · Vagas Internacionais · Remote-First**
