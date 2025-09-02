@@ -1,12 +1,13 @@
 import path from 'path';
 import fs from 'fs';
+import Head from 'next/head';
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const pdfDir = path.join(process.cwd(), 'public/pdfs');
   let files = [];
 
   if (fs.existsSync(pdfDir)) {
-    files = fs.readdirSync(pdfDir);
+    files = fs.readdirSync(pdfDir).filter(file => file.endsWith('.pdf'));
   }
 
   return {
@@ -18,24 +19,50 @@ export async function getServerSideProps() {
 
 export default function DownloadPage({ files }) {
   return (
-    <html lang="en">
-      <head>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Download PDFs</title>
-      </head>
-      <body>
-        <h1>Available Files</h1>
-        <ul>
-          {files.map((file) => (
-            <li key={file}>
-              <a href={`/pdfs/${file}`} download>
-                {file}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </body>
-    </html>
+    <>
+      <Head>
+        <title>Index of /download</title>
+        <style>{`
+          body { 
+            font-family: monospace; 
+            margin: 20px; 
+            background: white;
+            color: black;
+          }
+          h1 { 
+            font-size: 18px; 
+            font-weight: normal; 
+            margin-bottom: 20px;
+          }
+          hr { 
+            border: none; 
+            border-top: 1px solid #ccc; 
+            margin: 10px 0; 
+          }
+          pre { 
+            font-family: monospace; 
+            line-height: 1.2;
+          }
+          a { 
+            color: blue; 
+            text-decoration: underline; 
+          }
+          a:visited { 
+            color: purple; 
+          }
+        `}</style>
+      </Head>
+      <h1>Index of /download</h1>
+      <hr />
+      <pre>
+        <a href="../">../</a>{'\n'}
+        {files.map((file) => (
+          <span key={file}>
+            <a href={`/pdfs/${file}`}>{file}</a>{'\n'}
+          </span>
+        ))}
+      </pre>
+      <hr />
+    </>
   );
 }
