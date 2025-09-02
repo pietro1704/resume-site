@@ -36,8 +36,8 @@ export default function Home() {
   }, [darkMode])
 
   const toggleLanguage = () => {
-    setCurrentLang(currentLang === 'pt' ? 'en' : 'pt')
-  }
+    setCurrentLang(currentLang === 'pt' ? 'en' : 'pt');
+  };
 
   const toggleTheme = () => {
     setDarkMode(!darkMode)
@@ -107,12 +107,23 @@ export default function Home() {
                 {darkMode ? <FiSun size={18} /> : <FiMoon size={18} />}
               </button>
               
-              <button
-                onClick={toggleLanguage}
-                className="px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors text-sm font-medium"
-              >
-                {currentLang === 'pt' ? 'EN' : 'PT'}
-              </button>
+              <div className="relative inline-flex items-center">
+                <span className={`text-sm font-medium ${currentLang === 'pt' ? 'text-slate-900 dark:text-slate-100' : 'text-slate-500 dark:text-slate-400'}`}>Português</span>
+                <label className="relative inline-flex items-center cursor-pointer mx-2">
+                  <input
+                    type="checkbox"
+                    checked={currentLang === 'en'}
+                    onChange={toggleLanguage}
+                    className="sr-only peer"
+                  />
+                  <div className="w-16 h-8 bg-slate-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-slate-300 dark:peer-focus:ring-slate-700 rounded-full peer dark:bg-slate-600">
+                    <div
+                      className={`absolute top-1 left-1 w-6 h-6 bg-white border border-slate-300 rounded-full transition-transform dark:border-slate-500 ${currentLang === 'en' ? 'translate-x-8 bg-slate-900 dark:bg-slate-100' : 'bg-slate-900 dark:bg-slate-100'}`}
+                    ></div>
+                  </div>
+                </label>
+                <span className={`text-sm font-medium ${currentLang === 'en' ? 'text-slate-900 dark:text-slate-100' : 'text-slate-500 dark:text-slate-400'}`}>English</span>
+              </div>
             </div>
           </div>
         </div>
