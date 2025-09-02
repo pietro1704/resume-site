@@ -424,6 +424,10 @@ const atsFiles = [
   'pietro-cv-ats-vagasAltoVolume-en.pdf'
 ];
 
+// Add new skills to resume data
+resumeData.pt.skills.push('Unit Testing', 'Integration Testing');
+resumeData.en.skills.push('Unit Testing', 'Integration Testing');
+
 // Ensure directory exists
 const outputDir = path.join(__dirname, '../pdfs');
 if (!fs.existsSync(outputDir)) {
