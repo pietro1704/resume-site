@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pietro Ruy Pugliesi - Technical Case Study</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Georgia', serif; 
+            line-height: 1.6; 
+            font-size: 12px;
+            color: #2c3e50;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.75in;
+        }
+        .header { 
+            text-align: center; 
+            margin-bottom: 30px; 
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 20px;
+        }
+        .name { 
+            font-size: 28px; 
+            font-weight: bold; 
+            color: #2c3e50; 
+            margin-bottom: 8px; 
+        }
+        .title { 
+            font-size: 16px; 
+            color: #3498db; 
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .contact { 
+            font-size: 11px; 
+            color: #7f8c8d; 
+        }
+        .section { 
+            margin-bottom: 25px; 
+        }
+        .section-title { 
+            font-size: 18px; 
+            font-weight: bold; 
+            color: #2c3e50; 
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+            margin-bottom: 15px; 
+            text-transform: uppercase; 
+            letter-spacing: 1px;
+        }
+        .case-study {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #e74c3c;
+            margin-bottom: 20px;
+        }
+        .case-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 10px;
+        }
+        .case-subtitle {
+            font-size: 13px;
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        .challenge, .solution, .impact {
+            margin-bottom: 15px;
+        }
+        .challenge h4, .solution h4, .impact h4 {
+            color: #34495e;
+            font-size: 13px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .job { 
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+        }
+        .job-header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: flex-start; 
+            margin-bottom: 8px;
+        }
+        .job-title { 
+            font-weight: bold; 
+            color: #2c3e50; 
+            font-size: 14px; 
+        }
+        .job-company { 
+            font-weight: 600; 
+            color: #3498db; 
+        }
+        .job-date { 
+            font-size: 11px; 
+            color: #7f8c8d; 
+            background: #ecf0f1;
+            padding: 3px 8px;
+            border-radius: 3px;
+        }
+        .job-summary { 
+            font-style: italic; 
+            color: #7f8c8d; 
+            margin-bottom: 10px; 
+        }
+        .highlights { 
+            list-style: none; 
+        }
+        .highlights li { 
+            margin-bottom: 5px; 
+            position: relative; 
+            padding-left: 15px;
+            text-align: justify;
+        }
+        .highlights li:before { 
+            content: "▶"; 
+            position: absolute; 
+            left: 0; 
+            color: #3498db;
+        }
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 10px;
+        }
+        .tech-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 500;
+        }
+        .skills-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .skill-depth {
+            border: 1px solid #e0e0e0;
+            padding: 15px;
+            border-radius: 6px;
+        }
+        .skill-category-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 13px;
+        }
+        .skill-items {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+        .skill-item {
+            font-size: 11px;
+            padding: 2px 0;
+        }
+        .summary { 
+            text-align: justify; 
+            margin-bottom: 15px;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #27ae60;
+        }
+        @media print {
+            body { padding: 0.5in; font-size: 11px; }
+            .page-break { page-break-before: always; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="name">Pietro Ruy Pugliesi</div>
+        <div class="title">Senior iOS Developer • 100% Remote • Tech Lead</div>
+        <div class="contact">
+            pietroruypugliesi@gmail.com • +55 (13) 98225-3655 • Santos, SP, Brasil<br>
+            GitHub: pietro1704 • 
+            LinkedIn: pietro-pugliesi
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">PERFIL EXECUTIVO</div>
+        <div class="summary">Senior iOS Developer e segundo Tech Lead na equipe iOS do Pinterest (app com milhões de usuários). Liderei migração de arquitetura monolítica Objective-C para MVVM moderno em Swift em equipe de 60+ engenheiros, melhorando qualidade do código e reduzindo tempo de manutenção. Expert em mentoria remota e liderança técnica distribuída.</div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">CASO DE ESTUDO: PINTEREST</div>
+        <div class="case-study">
+            <div class="case-title">Migração de Arquitetura de Grande Escala</div>
+            <div class="case-subtitle">Liderança técnica em equipe global de 60+ engenheiros</div>
+            
+            <div class="challenge">
+                <h4>🎯 DESAFIO</h4>
+                <p>App do Pinterest com milhões de usuários operando em arquitetura monolítica Objective-C legada. Necessidade de modernização para melhorar qualidade do código, reduzir tempo de manutenção e facilitar desenvolvimento de novas features.</p>
+            </div>
+            
+            <div class="solution">
+                <h4>🚀 SOLUÇÃO</h4>
+                <p>Liderei migração gradual para arquitetura MVVM moderna em Swift, reimplementando completamente telas críticas (Updates, Comments, Home). Estabeleci padrões de código, testes unitários e snapshot testing, enquanto mantinha o app funcionando para milhões de usuários.</p>
+            </div>
+            
+            <div class="impact">
+                <h4>📈 IMPACTO</h4>
+                <p>• Melhoria significativa na qualidade do código e redução no tempo de manutenção<br>• Implementação de padrões Clean Code em toda equipe<br>• Estabelecimento de cultura de mentoria remota (office hours semanais)<br>• Onboarding estruturado para novos membros da equipe</p>
+            </div>
+            
+            <div class="tech-stack">
+                <span class="tech-tag">Swift</span><span class="tech-tag">Objective-C</span><span class="tech-tag">MVVM</span><span class="tech-tag">SwiftUI</span><span class="tech-tag">UIKit</span><span class="tech-tag">Combine</span><span class="tech-tag">Async/Await</span><span class="tech-tag">Unit Testing</span><span class="tech-tag">Snapshot Testing</span><span class="tech-tag">Texture (AsyncDisplayKit)</span><span class="tech-tag">Buildkite</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <div class="section">
+        <div class="section-title">EXPERIÊNCIA DETALHADA</div>
+        
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Senior iOS Developer & Tech Lead</div>
+                    <div class="job-company">Pinterest</div>
+                </div>
+                <div class="job-date">
+                    ago. de 2023 - 
+                    dez. de 2025
+                </div>
+            </div>
+            <div class="job-summary">Tech Lead de equipe distribuída iOS em app com milhões de usuários ativos</div>
+            <ul class="highlights">
+                <li> Liderei migração crítica de arquitetura monolítica Objective-C → MVVM moderno em Swift, em equipe 60+ engenheiros, melhorando qualidade e reduzindo tempo de manutenção</li><li> Reimplementei completamente telas de Atualizações (Updates), Comentários e tela inicial, impactando milhões de usuários diariamente</li><li> Mentor técnico remoto: conduzo office hours semanais, onboarding de novos membros e sou referência técnica para toda equipe</li><li> PR reviewer treinado: garanto qualidade e padrões de Clean Code em codebase crítico de produção</li><li> Implementei testes unitários e snapshot testing, melhorando cobertura e estabilidade do app</li><li> Foco em acessibilidade e performance optimization, cumprindo padrões internacionais de qualidade</li>
+            </ul>
+            <div class="tech-stack">
+                <span class="tech-tag">Swift</span><span class="tech-tag">Objective-C</span><span class="tech-tag">MVVM</span><span class="tech-tag">SwiftUI</span><span class="tech-tag">UIKit</span><span class="tech-tag">Combine</span><span class="tech-tag">Async/Await</span><span class="tech-tag">Unit Testing</span><span class="tech-tag">Snapshot Testing</span><span class="tech-tag">Texture (AsyncDisplayKit)</span><span class="tech-tag">Buildkite</span>
+            </div>
+        </div>
+        
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">iOS Developer</div>
+                    <div class="job-company">Instituto de Pesquisas Eldorado</div>
+                </div>
+                <div class="job-date">
+                    dez. de 2020 - 
+                    dez. de 2022
+                </div>
+            </div>
+            <div class="job-summary">Desenvolvimento de apps móveis e liderança técnica</div>
+            <ul class="highlights">
+                <li>Desenvolvimento dos apps WEMOB e Márcio Atalla</li><li>Líder técnico: onboarding, mentoria, revisão de código</li><li>Deploy com Fastlane, GitLab CI, TestFlight</li>
+            </ul>
+            <div class="tech-stack">
+                <span class="tech-tag">SwiftUI</span><span class="tech-tag">UIKit</span><span class="tech-tag">Combine</span><span class="tech-tag">Async/Await</span><span class="tech-tag">REST</span><span class="tech-tag">CI/CD</span><span class="tech-tag">Fastlane</span>
+            </div>
+        </div>
+        
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Aluno e Residente</div>
+                    <div class="job-company">Apple Developer Academy</div>
+                </div>
+                <div class="job-date">
+                    dez. de 2018 - 
+                    dez. de 2021
+                </div>
+            </div>
+            <div class="job-summary">Programa oficial da Apple voltado à formação em desenvolvimento iOS</div>
+            <ul class="highlights">
+                <li>Formação sólida em Swift, UIKit e desenvolvimento orientado ao produto</li><li>Aprendizado de design centrado no usuário e acessibilidade</li><li>Desenvolvimento de diversos apps iOS, do protótipo ao MVP funcional</li><li>Primeiros contatos com Clean Code, princípios SOLID e metodologias ágeis</li><li>Como residente, ajudei novos alunos e colaborei em projetos internos</li>
+            </ul>
+            <div class="tech-stack">
+                <span class="tech-tag">Swift</span><span class="tech-tag">UIKit</span><span class="tech-tag">SwiftUI</span><span class="tech-tag">HIG</span><span class="tech-tag">Design Thinking</span><span class="tech-tag">SOLID</span>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="section">
+        <div class="section-title">MATRIZ DE COMPETÊNCIAS</div>
+        <div class="skills-showcase">
+            
+            <div class="skill-depth">
+                <div class="skill-category-title">iOS Development</div>
+                <div class="skill-items">
+                    <div class="skill-item">• Swift</div><div class="skill-item">• Objective-C</div><div class="skill-item">• SwiftUI</div><div class="skill-item">• UIKit</div><div class="skill-item">• Combine</div><div class="skill-item">• Async/Await</div><div class="skill-item">• Core Data</div><div class="skill-item">• Texture (AsyncDisplayKit)</div><div class="skill-item">• URLSession</div><div class="skill-item">• Grand Central Dispatch</div>
+                </div>
+            </div>
+            
+            <div class="skill-depth">
+                <div class="skill-category-title">Testing & Quality</div>
+                <div class="skill-items">
+                    <div class="skill-item">• Unit Testing</div><div class="skill-item">• Snapshot Testing</div><div class="skill-item">• UI Testing</div><div class="skill-item">• TDD</div><div class="skill-item">• Code Review</div><div class="skill-item">• Performance Optimization</div><div class="skill-item">• Memory Management</div>
+                </div>
+            </div>
+            
+            <div class="skill-depth">
+                <div class="skill-category-title">Architecture & Patterns</div>
+                <div class="skill-items">
+                    <div class="skill-item">• MVVM</div><div class="skill-item">• MVC</div><div class="skill-item">• VIPER</div><div class="skill-item">• SOLID</div><div class="skill-item">• Clean Code</div><div class="skill-item">• Dependency Injection</div><div class="skill-item">• Protocol-Oriented Programming</div>
+                </div>
+            </div>
+            
+            <div class="skill-depth">
+                <div class="skill-category-title">Tools & CI/CD</div>
+                <div class="skill-items">
+                    <div class="skill-item">• Xcode</div><div class="skill-item">• Fastlane</div><div class="skill-item">• GitLab CI</div><div class="skill-item">• GitHub Actions</div><div class="skill-item">• Buildkite</div><div class="skill-item">• TestFlight</div><div class="skill-item">• App Store Connect</div><div class="skill-item">• Firebase</div>
+                </div>
+            </div>
+            
+            <div class="skill-depth">
+                <div class="skill-category-title">Accessibility & UX</div>
+                <div class="skill-items">
+                    <div class="skill-item">• VoiceOver</div><div class="skill-item">• Dynamic Type</div><div class="skill-item">• Accessibility Inspector</div><div class="skill-item">• HIG Compliance</div><div class="skill-item">• Responsive Design</div>
+                </div>
+            </div>
+            
+            <div class="skill-depth">
+                <div class="skill-category-title">Remote Leadership</div>
+                <div class="skill-items">
+                    <div class="skill-item">• Technical Mentoring</div><div class="skill-item">• Distributed Team Management</div><div class="skill-item">• Code Review Leadership</div><div class="skill-item">• Cross-timezone Collaboration</div><div class="skill-item">• Onboarding Programs</div>
+                </div>
+            </div>
+            
+            <div class="skill-depth">
+                <div class="skill-category-title">Languages</div>
+                <div class="skill-items">
+                    <div class="skill-item">• Portuguese (Native)</div><div class="skill-item">• English (Advanced/Fluent)</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

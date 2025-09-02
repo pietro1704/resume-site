@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pietro Ruy Pugliesi - Skills Matrix Resume</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.5; 
+            font-size: 11px;
+            color: #2c3e50;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.6in;
+        }
+        .header { 
+            text-align: center; 
+            margin-bottom: 25px; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .name { 
+            font-size: 26px; 
+            font-weight: bold; 
+            margin-bottom: 6px; 
+        }
+        .title { 
+            font-size: 15px; 
+            margin-bottom: 8px;
+            opacity: 0.9;
+        }
+        .contact { 
+            font-size: 11px; 
+            opacity: 0.8;
+        }
+        .section { 
+            margin-bottom: 20px; 
+        }
+        .section-title { 
+            font-size: 16px; 
+            font-weight: bold; 
+            color: #2c3e50; 
+            background: #ecf0f1;
+            padding: 8px 15px;
+            border-radius: 5px;
+            margin-bottom: 12px; 
+            text-transform: uppercase; 
+            letter-spacing: 1px;
+        }
+        .skills-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .skill-category {
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            background: #fafafa;
+        }
+        .skill-category-title {
+            font-weight: bold;
+            color: #34495e;
+            margin-bottom: 10px;
+            font-size: 13px;
+            text-align: center;
+            background: white;
+            padding: 5px;
+            border-radius: 4px;
+        }
+        .skill-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .skill-bar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .skill-name {
+            flex: 1;
+            font-size: 10px;
+            font-weight: 500;
+        }
+        .skill-level {
+            width: 60px;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .skill-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #27ae60, #2ecc71);
+            border-radius: 4px;
+        }
+        .experience-highlight {
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 0 6px 6px 0;
+        }
+        .highlight-company {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+        .highlight-role {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+        .highlight-achievement {
+            color: #34495e;
+            text-align: justify;
+        }
+        .keyword-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            justify-content: center;
+        }
+        .keyword-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 15px;
+            font-size: 9px;
+            font-weight: 500;
+        }
+        .keyword-tag.primary {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            font-weight: bold;
+        }
+        .keyword-tag.secondary {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+        }
+        .summary { 
+            text-align: justify; 
+            margin-bottom: 15px;
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+        }
+        .project-card {
+            border: 1px solid #e0e0e0;
+            padding: 12px;
+            border-radius: 6px;
+            background: white;
+        }
+        .project-name {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+            font-size: 11px;
+        }
+        .project-desc {
+            color: #7f8c8d;
+            font-size: 9px;
+            margin-bottom: 8px;
+        }
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2px;
+        }
+        .project-tech-tag {
+            background: #ecf0f1;
+            color: #34495e;
+            padding: 1px 4px;
+            border-radius: 2px;
+            font-size: 8px;
+        }
+        @media print {
+            body { padding: 0.4in; font-size: 10px; }
+            .page-break { page-break-before: always; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="name">Pietro Ruy Pugliesi</div>
+        <div class="title">Senior iOS Developer • 100% Remote • Tech Lead</div>
+        <div class="contact">
+            pietroruypugliesi@gmail.com • +55 (13) 98225-3655 • Santos, SP, Brasil<br>
+            GitHub: pietro1704 • 
+            LinkedIn: pietro-pugliesi
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="summary">Senior iOS Developer e segundo Tech Lead na equipe iOS do Pinterest (app com milhões de usuários). Liderei migração de arquitetura monolítica Objective-C para MVVM moderno em Swift em equipe de 60+ engenheiros, melhorando qualidade do código e reduzindo tempo de manutenção. Expert em mentoria remota e liderança técnica distribuída.</div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">DESTAQUES DA EXPERIÊNCIA</div>
+        
+        <div class="experience-highlight">
+            <div class="highlight-company">Pinterest • Senior iOS Developer & Tech Lead</div>
+            <div class="highlight-role">Tech Lead de equipe distribuída iOS em app com milhões de usuários ativos</div>
+            <div class="highlight-achievement"> Liderei migração crítica de arquitetura monolítica Objective-C → MVVM moderno em Swift, em equipe 60+ engenheiros, melhorando qualidade e reduzindo tempo de manutenção</div>
+        </div>
+        
+        <div class="experience-highlight">
+            <div class="highlight-company">Instituto de Pesquisas Eldorado • iOS Developer</div>
+            <div class="highlight-role">Desenvolvimento de apps móveis e liderança técnica</div>
+            <div class="highlight-achievement">Desenvolvimento dos apps WEMOB e Márcio Atalla</div>
+        </div>
+        
+    </div>
+
+    <div class="section">
+        <div class="section-title">MATRIZ DE COMPETÊNCIAS TÉCNICAS</div>
+        <div class="skills-matrix">
+            
+            <div class="skill-category">
+                <div class="skill-category-title">iOS Development</div>
+                <div class="skill-bars">
+                    
+                        <div class="skill-bar">
+                            <div class="skill-name">Swift</div>
+                            <div class="skill-level">
+                                <div class="skill-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar">
+                            <div class="skill-name">Objective-C</div>
+                            <div class="skill-level">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar">
+                            <div class="skill-name">SwiftUI</div>
+                            <div class="skill-level">
+                                <div class="skill-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar">
+                            <div class="skill-name">UIKit</div>
+                            <div class="skill-level">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar">
+                            <div class="skill-name">Combine</div>
+                            <div class="skill-level">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar">
+                            <div class="skill-name">Async/Await</div>
+                            <div class="skill-level">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <div class="skill-category-title">Testing & Quality</div>
+                <div class="skill-bars">
+                    
+                        <div class="skill-bar">
+                            <div class="skill-name">Unit Testing</div>
+                            <div class="skill-level">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar">
+                            <div class="skill-name">Snapshot Testing</div>
+                            <div class="skill-level">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar">
+                            <div class="skill-name">UI Testing</div>
+                            <div class="skill-level">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar">
+                            <div class="skill-name">TDD</div>
+                            <div class="skill-level">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar">
+                            <div class="skill-name">Code Review</div>
+                            <div class="skill-level">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar">
+                            <div class="skill-name">Performance Optimization</div>
+                            <div class="skill-level">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <div class="skill-category-title">Architecture & Patterns</div>
+                <div class="skill-bars">
+                    
+                        <div class="skill-bar">
+                            <div class="skill-name">MVVM</div>
+                            <div class="skill-level">
+                                <div class="skill-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar">
+                            <div class="skill-name">MVC</div>
+                            <div class="skill-level">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar">
+                            <div class="skill-name">VIPER</div>
+                            <div class="skill-level">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar">
+                            <div class="skill-name">SOLID</div>
+                            <div class="skill-level">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar">
+                            <div class="skill-name">Clean Code</div>
+                            <div class="skill-level">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar">
+                            <div class="skill-name">Dependency Injection</div>
+                            <div class="skill-level">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <div class="skill-category-title">Tools & CI/CD</div>
+                <div class="skill-bars">
+                    
+                        <div class="skill-bar">
+                            <div class="skill-name">Xcode</div>
+                            <div class="skill-level">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar">
+                            <div class="skill-name">Fastlane</div>
+                            <div class="skill-level">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar">
+                            <div class="skill-name">GitLab CI</div>
+                            <div class="skill-level">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar">
+                            <div class="skill-name">GitHub Actions</div>
+                            <div class="skill-level">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar">
+                            <div class="skill-name">Buildkite</div>
+                            <div class="skill-level">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar">
+                            <div class="skill-name">TestFlight</div>
+                            <div class="skill-level">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <div class="skill-category-title">Accessibility & UX</div>
+                <div class="skill-bars">
+                    
+                        <div class="skill-bar">
+                            <div class="skill-name">VoiceOver</div>
+                            <div class="skill-level">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar">
+                            <div class="skill-name">Dynamic Type</div>
+                            <div class="skill-level">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar">
+                            <div class="skill-name">Accessibility Inspector</div>
+                            <div class="skill-level">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar">
+                            <div class="skill-name">HIG Compliance</div>
+                            <div class="skill-level">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar">
+                            <div class="skill-name">Responsive Design</div>
+                            <div class="skill-level">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <div class="skill-category-title">Remote Leadership</div>
+                <div class="skill-bars">
+                    
+                        <div class="skill-bar">
+                            <div class="skill-name">Technical Mentoring</div>
+                            <div class="skill-level">
+                                <div class="skill-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar">
+                            <div class="skill-name">Distributed Team Management</div>
+                            <div class="skill-level">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar">
+                            <div class="skill-name">Code Review Leadership</div>
+                            <div class="skill-level">
+                                <div class="skill-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar">
+                            <div class="skill-name">Cross-timezone Collaboration</div>
+                            <div class="skill-level">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar">
+                            <div class="skill-name">Onboarding Programs</div>
+                            <div class="skill-level">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <div class="skill-category-title">Languages</div>
+                <div class="skill-bars">
+                    
+                        <div class="skill-bar">
+                            <div class="skill-name">Portuguese (Native)</div>
+                            <div class="skill-level">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar">
+                            <div class="skill-name">English (Advanced/Fluent)</div>
+                            <div class="skill-level">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">NUVEM DE PALAVRAS-CHAVE</div>
+        <div class="keyword-cloud">
+            <span class="keyword-tag primary">Swift</span>
+            <span class="keyword-tag primary">iOS Development</span>
+            <span class="keyword-tag primary">MVVM Architecture</span>
+            <span class="keyword-tag primary">Tech Lead</span>
+            <span class="keyword-tag primary">Remote Leadership</span>
+            <span class="keyword-tag secondary">SwiftUI</span>
+            <span class="keyword-tag secondary">Combine</span>
+            <span class="keyword-tag secondary">Async/Await</span>
+            <span class="keyword-tag secondary">Unit Testing</span>
+            <span class="keyword-tag secondary">Pinterest Scale</span>
+            <span class="keyword-tag">Objective-C Migration</span>
+            <span class="keyword-tag">Code Review</span>
+            <span class="keyword-tag">Mentorship</span>
+            <span class="keyword-tag">Clean Code</span>
+            <span class="keyword-tag">CI/CD</span>
+            <span class="keyword-tag">Accessibility</span>
+            <span class="keyword-tag">Performance Optimization</span>
+            <span class="keyword-tag">Cross-timezone</span>
+            <span class="keyword-tag">Distributed Teams</span>
+            <span class="keyword-tag">Texture</span>
+            <span class="keyword-tag">Snapshot Testing</span>
+            <span class="keyword-tag">App Store</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">PROJETOS EM DESTAQUE</div>
+        <div class="projects-grid">
+            
+            <div class="project-card">
+                <div class="project-name">Breviary App</div>
+                <div class="project-desc">App iOS para leituras litúrgicas com suporte a versões antigas do iOS</div>
+                <div class="project-tech">
+                    <span class="project-tech-tag">Swift</span><span class="project-tech-tag">UIKit</span><span class="project-tech-tag">CI/CD</span>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-name">Site Pessoal Rails</div>
+                <div class="project-desc">Website pessoal desenvolvido em Ruby on Rails com frontend React</div>
+                <div class="project-tech">
+                    <span class="project-tech-tag">Ruby on Rails</span><span class="project-tech-tag">React</span><span class="project-tech-tag">Heroku</span>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-name">Flutter Text Rating</div>
+                <div class="project-desc">Micro apps em Flutter para avaliação e armazenamento de textos</div>
+                <div class="project-tech">
+                    <span class="project-tech-tag">Flutter</span><span class="project-tech-tag">Dart</span><span class="project-tech-tag">SQLite</span>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">FORMAÇÃO</div>
+        
+        <div class="experience-highlight">
+            <div class="highlight-company">UNICAMP</div>
+            <div class="highlight-role">Bacharelado em Engenharia da Computação</div>
+            <div class="highlight-achievement">2017 - 2022</div>
+        </div>
+        
+    </div>
+</body>
+</html>

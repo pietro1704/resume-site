@@ -1,0 +1,164 @@
+{
+  "pt": {
+    "basics": {
+      "name": "Pietro Ruy Pugliesi",
+      "label": "Desenvolvedor iOS Sênior & Engenheiro de Computação",
+      "email": "pietroruypugliesi@gmail.com",
+      "phone": "+55 (13) 98225-3655",
+      "url": "https://github.com/pietro1704",
+      "summary": "Engenheiro iOS com experiência sênior internacional no Pinterest, referência técnica em migração Obj-C → Swift MVVM, liderança em features críticas e mentoria de novos devs. Reconhecido como membro mais produtivo da equipe global (50+ engenheiros)."
+    },
+    "work": [
+      {
+        "name": "Pinterest",
+        "position": "iOS Developer (Sênior)",
+        "url": "https://pinterest.com",
+        "startDate": "2023-09-01",
+        "endDate": "Presente",
+        "summary": "Segundo líder técnico da equipe iOS mais produtiva globalmente (50+ devs), com entregas críticas para milhões de usuários ativos.",
+        "highlights": [
+          "Liderança técnica na **migração do monólito Objective-C para Swift com arquitetura MVVM**, cobrindo módulos core.",
+          "Reimplementação da **tela de Atualizações**, com redução perceptível de tempo de carregamento e melhor UX.",
+          "Desenvolvimento de features-chave: **interações de Pin (like/comentário)**, **tela de comentários** e **sistema de compartilhamento**.",
+          "Revisão de **~40–50 PRs/mês**, garantindo padrões de Clean Code e qualidade em escala.",
+          "Mentoria direta de **5 novos devs**, além de office hours semanais como referência técnica.",
+          "Colaboração contínua com QA e DevOps em pipelines automatizados de deploy via Buildkite."
+        ]
+      },
+      {
+        "name": "Instituto de Pesquisas Eldorado",
+        "position": "iOS Developer",
+        "url": "https://eldorado.org.br",
+        "startDate": "2021-01-01",
+        "endDate": "2023-01-01",
+        "summary": "Desenvolvimento de apps móveis (saúde e mobilidade elétrica) e liderança técnica.",
+        "highlights": [
+          "Desenvolvimento do app **WEMOB (veículos elétricos)** e do app de saúde Márcio Atalla.",
+          "Responsável por onboarding, mentoria e revisão de código.",
+          "CI/CD com Fastlane, GitLab CI, distribuição via TestFlight."
+        ]
+      },
+      {
+        "name": "Apple Developer Academy",
+        "position": "Aluno e Residente",
+        "url": "https://developeracademy.eldorado.org.br/campinas/",
+        "startDate": "2019-01-01",
+        "endDate": "2021-12-31",
+        "summary": "Programa oficial Apple em desenvolvimento iOS com foco em produto.",
+        "highlights": [
+          "Formação sólida em Swift, UIKit, design centrado no usuário e acessibilidade.",
+          "Construção de múltiplos apps iOS, do protótipo ao MVP funcional.",
+          "Como residente, mentorei alunos mais novos e colaborei em projetos internos."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "institution": "UNICAMP",
+        "area": "Engenharia da Computação",
+        "studyType": "Bacharelado",
+        "startDate": "2018-01-01",
+        "endDate": "2022-12-31"
+      }
+    ],
+    "projects": [
+      {
+        "name": "Breviary App",
+        "description": "App iOS para leituras litúrgicas com suporte a versões antigas.",
+        "url": "https://github.com/pietro1704/breviary"
+      },
+      {
+        "name": "Site Pessoal",
+        "description": "Website pessoal em Ruby on Rails + React.",
+        "url": "https://pietropugliesi.dev"
+      }
+    ],
+    "skills": {
+      "iOS": ["Swift", "Objective-C", "SwiftUI", "UIKit", "Combine", "Async/Await", "Core Data", "HealthKit"],
+      "Arquitetura": ["MVVM", "MVC", "VIPER", "SOLID", "Clean Code", "TDD"],
+      "Ferramentas": ["Xcode", "Fastlane", "GitLab CI", "GitHub Actions", "Buildkite", "TestFlight"],
+      "Outros": ["Docker", "Git", "Linux", "Firebase", "REST APIs"]
+    }
+  },
+  "en": {
+    "basics": {
+      "name": "Pietro Ruy Pugliesi",
+      "label": "Senior iOS Engineer & Computer Engineer",
+      "email": "pietroruypugliesi@gmail.com",
+      "phone": "+55 (13) 98225-3655",
+      "url": "https://github.com/pietro1704",
+      "summary": "Senior iOS Engineer at Pinterest, technical lead in Obj-C → Swift MVVM migration, core feature ownership, and mentorship. Recognized as top contributor within a 50+ global engineering team."
+    },
+    "work": [
+      {
+        "name": "Pinterest",
+        "position": "Senior iOS Engineer",
+        "url": "https://pinterest.com",
+        "startDate": "2023-09-01",
+        "endDate": "Present",
+        "summary": "Second technical lead of Pinterest’s most productive iOS team (50+ engineers), delivering mission-critical features to millions of active users.",
+        "highlights": [
+          "Led the **migration from Objective-C monolith to Swift MVVM**, modernizing core app modules.",
+          "Rebuilt the **Notifications screen**, improving load time and user experience.",
+          "Shipped high-impact features: **Pin interactions (like/comment)**, **Comments screen**, **Sharing system**.",
+          "Reviewed **~40–50 PRs per month**, ensuring clean code and scalable quality.",
+          "Mentored **5 new engineers**; established weekly open office hours as go-to technical reference.",
+          "Worked closely with QA and DevOps on automated pipelines with Buildkite."
+        ]
+      },
+      {
+        "name": "Instituto de Pesquisas Eldorado",
+        "position": "iOS Developer",
+        "url": "https://eldorado.org.br",
+        "startDate": "2021-01-01",
+        "endDate": "2023-01-01",
+        "summary": "iOS developer with focus on mobility and health apps, technical leadership.",
+        "highlights": [
+          "Developed **WEMOB (EV)** and **health/fitness apps**.",
+          "Led onboarding, mentoring, and code reviews.",
+          "Managed CI/CD with Fastlane, GitLab CI, TestFlight."
+        ]
+      },
+      {
+        "name": "Apple Developer Academy",
+        "position": "Student & Resident",
+        "url": "https://developeracademy.eldorado.org.br/campinas/",
+        "startDate": "2019-01-01",
+        "endDate": "2021-12-31",
+        "summary": "Apple’s official iOS development program focused on product and user-centric design.",
+        "highlights": [
+          "Strong foundation in Swift, UIKit, and user-centered development.",
+          "Developed multiple iOS apps from prototype to MVP.",
+          "Supported newer students as a resident mentor."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "institution": "UNICAMP",
+        "area": "Computer Engineering",
+        "studyType": "Bachelor's",
+        "startDate": "2018-01-01",
+        "endDate": "2022-12-31"
+      }
+    ],
+    "projects": [
+      {
+        "name": "Breviary App",
+        "description": "iOS app for liturgy readings with legacy iOS support.",
+        "url": "https://github.com/pietro1704/breviary"
+      },
+      {
+        "name": "Personal Website",
+        "description": "Portfolio built with Ruby on Rails + React frontend.",
+        "url": "https://pietropugliesi.dev"
+      }
+    ],
+    "skills": {
+      "iOS": ["Swift", "Objective-C", "SwiftUI", "UIKit", "Combine", "Async/Await", "Core Data", "HealthKit"],
+      "Architecture": ["MVVM", "MVC", "VIPER", "SOLID", "Clean Code", "TDD"],
+      "Tools": ["Xcode", "Fastlane", "GitLab CI", "GitHub Actions", "Buildkite", "TestFlight"],
+      "Other": ["Docker", "Git", "Linux", "Firebase", "REST APIs"]
+    }
+  }
+}
