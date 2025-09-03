@@ -37,15 +37,16 @@
         "url": "https://pinterest.com",
         "startDate": "2023-09-01",
         "endDate": "2025-09-02",
-        "summary": "Liderança técnica remota de equipe iOS distribuída em aplicativo global com 450M+ usuários ativos mensais.",
+        "summary": "Liderança técnica remota como segundo líder de equipe iOS de 5 pessoas em aplicativo global com 450M+ usuários ativos mensais.",
         "highlights": [
-          "Conduzi migração de arquitetura (Objective-C → Swift/MVVM) em equipe de 60+ engenheiros, reduzindo débito técnico em 40% (~2.000 horas/ano economizadas) e aumentando frequência de deploy em 25%.",
-          "Reimplementei 3 features core (Updates, Comments, Home) servindo 450M+ usuários mensais com 99.9% de crash-free rate, resultando em aumento de engajamento em 15%.",
-          "Estabeleci programa de mentoria remota com office hours semanais para 15+ engenheiros em 4 fusos horários, reduzindo tempo de onboarding em 50% (de 3 meses para 6 semanas).",
+          "Conduzi migração de arquitetura (Objective-C → Swift/MVVM) melhorando manutenibilidade do código e facilitando desenvolvimento de novas features.",
+          "Reimplementei 3 features core (Updates, Comments, Home) servindo 450M+ usuários mensais com 99.9% de crash-free rate.",
+          "Reconhecido como engenheiro mais produtivo da equipe de 60+ pessoas, com entregas consistentemente acima da média nos últimos 2 anos.",
+          "Atuo como referência técnica da equipe para dúvidas complexas de arquitetura e assumo liderança durante férias do tech lead principal.",
           "Liderei processo de revisão de código: 200+ PRs/mês, mantendo 95% de score de qualidade e reduzindo bugs críticos em produção em 30%.",
+          "Estabeleci programa de mentoria remota com office hours semanais, reduzindo tempo de onboarding em 50% (de 3 meses para 6 semanas).",
           "Aumentei cobertura de testes unitários de 60% para 85%, garantindo estabilidade e confiança no pipeline de entrega contínua.",
-          "Atingi conformidade WCAG 2.1 AA em todas as features, beneficiando 10M+ usuários com deficiências e melhorando a retenção em mercados globais.",
-          "Coordenei esforços com PM, Design e Data, influenciando roadmap global e priorizando iniciativas de alto impacto financeiro."
+          "Atingi conformidade WCAG 2.1 AA em todas as features, beneficiando 10M+ usuários com deficiências."
         ],
         "technologies": [
           "Swift",
@@ -65,8 +66,8 @@
         "name": "Instituto de Pesquisas Eldorado",
         "position": "iOS Developer",
         "url": "https://eldorado.org.br",
-        "startDate": "2021-01-01",
-        "endDate": "2023-01-01",
+        "startDate": "2020-11-01",
+        "endDate": "2023-08-31",
         "summary": "Desenvolvimento de aplicativos iOS e liderança técnica.",
         "highlights": [
           "Desenvolvi e publiquei os apps WEMOB (mobilidade elétrica) e Márcio Atalla (fitness/saúde).",
@@ -79,6 +80,7 @@
           "Combine",
           "Async/Await",
           "REST",
+          "GraphQL",
           "CI/CD",
           "Fastlane"
         ]
@@ -154,8 +156,7 @@
         "SwiftData",
         "Swift Charts",
         "WidgetKit",
-        "App Intents",
-        "Core ML"
+        "App Intents"
       ],
       "Testing & Quality": [
         "XCTest",
@@ -212,11 +213,11 @@
   "en": {
     "basics": {
       "name": "Pietro Ruy Pugliesi",
-      "label": "Senior iOS Tech Lead | Scalable Mobile Architect | Remote-First Leadership",
+      "label": "Senior iOS Tech Lead | Scalable Mobile Architect | Global Remote Leadership",
       "email": "pietroruypugliesi@gmail.com",
       "phone": "+55 (13) 98225-3655",
       "url": "https://github.com/pietro1704",
-      "summary": "Senior iOS Tech Lead with 5+ years of experience scaling mobile apps to hundreds of millions of users in a remote-first environment. Led large-scale architecture migration (Objective-C → Swift/MVVM) for a distributed team of 60+ engineers, reducing technical debt by 40% (~2,000 annual hours saved) and improving deployment frequency by 25%. Expert in distributed leadership, mentoring international teams across multiple time zones, cutting onboarding time by 50%, and delivering high-quality, accessible mobile experiences.",
+      "summary": "Senior iOS Tech Lead at Pinterest with 5+ years of experience scaling mobile applications for hundreds of millions of users in a remote-first environment. Second-in-command of 5-person iOS team, leading architecture migration (Objective-C → Swift/MVVM) to improve code maintainability and facilitate new feature development. Expert in remote technical leadership, mentoring international teams and reducing onboarding time by 50%.",
       "location": {
         "city": "Santos",
         "region": "SP",
@@ -247,15 +248,16 @@
         "url": "https://pinterest.com",
         "startDate": "2023-09-01",
         "endDate": "2025-09-02",
-        "summary": "Remote-first technical leadership for Pinterest iOS app with 450M+ monthly active users.",
+        "summary": "Remote technical leadership as second-in-command of 5-person iOS team for global app with 450M+ monthly active users.",
         "highlights": [
-          "Led Objective-C → Swift/MVVM migration for 60+ engineers, reducing technical debt by 40% (~2,000 annual hours saved) and increasing deployment frequency by 25%.",
-          "Rebuilt 3 core features (Updates, Comments, Home) used by 450M+ users with 99.9% crash-free rate, resulting in 15% higher user engagement.",
-          "Implemented global mentorship program with weekly office hours across 4 time zones, reducing onboarding time by 50% (3 months → 6 weeks).",
-          "Reviewed 200+ pull requests per month, ensuring 95% code quality adherence and reducing critical production bugs by 30%.",
-          "Increased unit test coverage from 60% to 85%, ensuring stability and confidence in the continuous delivery pipeline.",
-          "Achieved WCAG 2.1 AA accessibility compliance across all features, benefiting 10M+ users with disabilities and improving retention in global markets.",
-          "Collaborated cross-functionally with PM, Design, and Data teams to influence the global roadmap, prioritizing high-impact initiatives."
+          "Led architecture migration (Objective-C → Swift/MVVM) improving code maintainability and facilitating new feature development.",
+          "Reimplemented 3 core features (Updates, Comments, Home) serving 450M+ monthly users with 99.9% crash-free rate.",
+          "Recognized as most productive engineer on 60+ person team, consistently delivering above-average results over 2 years.",
+          "Serve as technical reference for complex architecture questions and assume leadership during tech lead's absence.",
+          "Led code review process: 200+ PRs/month, maintaining 95% quality score and reducing critical production bugs by 30%.",
+          "Established remote mentorship program with weekly office hours, reducing onboarding time by 50% (from 3 months to 6 weeks).",
+          "Increased unit test coverage from 60% to 85%, ensuring stability and confidence in continuous delivery pipeline.",
+          "Achieved WCAG 2.1 AA compliance across all features, benefiting 10M+ users with disabilities."
         ],
         "technologies": [
           "Swift",
@@ -275,13 +277,13 @@
         "name": "Instituto de Pesquisas Eldorado",
         "position": "iOS Developer",
         "url": "https://eldorado.org.br",
-        "startDate": "2021-01-01",
-        "endDate": "2023-01-01",
-        "summary": "iOS developer delivering production apps and establishing technical best practices.",
+        "startDate": "2020-11-01",
+        "endDate": "2023-08-31",
+        "summary": "iOS app development and technical leadership.",
         "highlights": [
-          "Developed and launched two production apps: WEMOB (electric mobility) and Márcio Atalla (health/fitness).",
-          "Introduced code review practices, mentored juniors, and streamlined onboarding.",
-          "Implemented CI/CD pipelines using Fastlane, GitLab CI, and TestFlight."
+          "Developed and published WEMOB (electric mobility) and Márcio Atalla (fitness/health) apps.",
+          "Introduced code review practices, junior mentoring, and structured onboarding.",
+          "Implemented CI/CD pipelines with Fastlane, GitLab CI, and TestFlight."
         ],
         "technologies": [
           "SwiftUI",
@@ -289,22 +291,23 @@
           "Combine",
           "Async/Await",
           "REST",
+          "GraphQL",
           "CI/CD",
           "Fastlane"
         ]
       },
       {
         "name": "Apple Developer Academy",
-        "position": "Student & Resident",
-        "url": "https://developeracademy.eldorado.org.br/campinas/",
+        "position": "Student and Resident",
+        "url": "https://developeracademy.pucpr.br",
         "startDate": "2019-01-01",
-        "endDate": "2021-12-31",
-        "summary": "Apple's official iOS development program with emphasis on product-driven engineering and mentorship.",
+        "endDate": "2020-12-31",
+        "summary": "Official Apple program focused on iOS development and mentorship.",
         "highlights": [
-          "Completed intensive training in Swift, UIKit, SwiftUI, and product-driven development.",
-          "Delivered 5+ iOS apps from concept to MVP following Apple's HIG.",
-          "Applied design thinking and accessibility-first practices.",
-          "Promoted to Resident, mentoring new cohorts and collaborating on academy-wide projects."
+          "Intensive training in Swift, UIKit, SwiftUI, and product-oriented development.",
+          "Delivered 5+ iOS apps from prototype to MVP following HIG.",
+          "Applied design thinking and accessibility practices.",
+          "Promoted to Resident, acting as mentor and collaborating on internal projects."
         ],
         "technologies": [
           "Swift",
@@ -316,33 +319,24 @@
         ]
       }
     ],
-    "education": [
-      {
-        "institution": "UNICAMP",
-        "area": "Computer Engineering",
-        "studyType": "Bachelor's",
-        "startDate": "2018-01-01",
-        "endDate": "2022-12-31"
-      }
-    ],
     "projects": [
       {
         "name": "Breviary App",
-        "description": "iOS app with legacy OS support and CI/CD automation.",
+        "description": "iOS app with legacy version support and automated CI/CD.",
         "highlights": [
-          "Full support for older iOS versions.",
-          "Implemented CI/CD pipelines with automation.",
-          "Delivered accessible UI compliant with WCAG 2.1 AA."
+          "Full compatibility with older iOS versions.",
+          "Automated CI/CD pipeline.",
+          "WCAG 2.1 AA accessible interface."
         ],
         "technologies": ["Swift", "UIKit", "CI/CD"],
         "url": "https://github.com/pietro1704/breviary"
       },
       {
-        "name": "Personal Rails Website",
-        "description": "Portfolio website built with Ruby on Rails and React frontend.",
+        "name": "Personal Rails Site",
+        "description": "Personal website in Ruby on Rails and React.",
         "highlights": [
           "Modern React frontend.",
-          "Automated deployment with Heroku.",
+          "Automated deployment on Heroku.",
           "Responsive, mobile-first design."
         ],
         "technologies": ["Ruby on Rails", "React", "Heroku"],
@@ -364,8 +358,7 @@
         "SwiftData",
         "Swift Charts",
         "WidgetKit",
-        "App Intents",
-        "Core ML"
+        "App Intents"
       ],
       "Testing & Quality": [
         "XCTest",

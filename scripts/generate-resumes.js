@@ -97,6 +97,7 @@ function generateATSTemplate(data, lang) {
         `).join('')}
     </div>
 
+    ${data.education ? `
     <div class="section">
         <div class="section-title">${isPortuguese ? 'Formação' : 'Education'}</div>
         ${data.education.map(edu => `
@@ -106,6 +107,7 @@ function generateATSTemplate(data, lang) {
         </div>
         `).join('')}
     </div>
+    ` : ''}
 </body>
 </html>`;
 }
@@ -405,12 +407,12 @@ function generateHybridSkillsTemplate(data, lang) {
 
     <div class="section">
         <div class="section-title">${isPortuguese ? 'Formação' : 'Education'}</div>
-        ${data.education.map(edu => `
+        ${data.education ? data.education.map(edu => `
         <div>
             <strong>${edu.studyType} ${isPortuguese ? 'em' : 'in'} ${edu.area}</strong><br>
             ${edu.institution} | ${new Date(edu.startDate).getFullYear()} - ${new Date(edu.endDate).getFullYear()}
         </div>
-        `).join('')}
+        `).join('') : ''}
     </div>
 </body>
 </html>`;
