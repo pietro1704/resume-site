@@ -134,7 +134,7 @@ export default function Home() {
   )
 
   const renderActionButtons = () => (
-    <div className="flex flex-wrap gap-4 mb-8">
+    <div className="flex flex-wrap gap-4 mb-4">
       <a
         href={`mailto:${data.basics.email}`}
         className={BUTTON_CLASSES.primary}
@@ -202,18 +202,23 @@ export default function Home() {
 
       <main className="pt-20">
         {/* Hero Section */}
-        <section id="about" className="py-20 lg:py-32">
+        <section id="about" className="py-12 lg:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="lg:grid lg:grid-cols-12 lg:gap-16 items-start">
               <div className="lg:col-span-12">
-                <h1 className="text-4xl md:text-6xl font-bold text-slate-900 dark:text-white leading-tight">
-                  {data.basics.name}
-                </h1>
-                <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mt-4 mb-6">
-                  {data.basics.label}
-                </p>
-                
-                <div className="flex flex-col lg:flex-row lg:gap-8 items-start mb-8">
+                <div className="flex flex-col lg:flex-row lg:gap-8 items-start mb-6">
+                  <div className="flex-1 lg:order-1">
+                    <h1 className="text-4xl md:text-6xl font-bold text-slate-900 dark:text-white leading-tight">
+                      {data.basics.name}
+                    </h1>
+                    <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mt-3 mb-4">
+                      {data.basics.label}
+                    </p>
+                    <p className="text-lg text-slate-700 dark:text-slate-400 leading-relaxed">
+                      {data.basics.summary}
+                    </p>
+                  </div>
+                  
                   <div className="flex-shrink-0 mb-6 lg:mb-0 lg:order-2">
                     <Image
                       src="/photo.jpg"
@@ -223,17 +228,11 @@ export default function Home() {
                       className="rounded-2xl object-cover mx-auto lg:mx-0"
                     />
                   </div>
-                  
-                  <div className="flex-1 lg:order-1">
-                    <p className="text-lg text-slate-700 dark:text-slate-400 leading-relaxed">
-                      {data.basics.summary}
-                    </p>
-                  </div>
                 </div>
                 
                 {renderActionButtons()}
 
-                <div className="flex space-x-6">
+                <div className="flex space-x-6 mb-4">
                   {data.basics.profiles.map((profile) => (
                     <a
                       key={profile.network}
@@ -279,7 +278,7 @@ export default function Home() {
                           {job.position}
                         </h3>
                         <span className="text-slate-600 dark:text-slate-400 text-sm">
-                          {new Date(job.startDate).getFullYear()} - {job.endDate ? new Date(job.endDate).getFullYear() : 'Present'}
+                          {job.startDate} - {job.endDate || 'Present'}
                         </span>
                       </div>
                       

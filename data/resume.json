@@ -2,7 +2,7 @@
   "pt": {
     "basics": {
       "name": "Pietro Ruy Pugliesi",
-      "label": "Senior iOS Tech Lead | Scalable Mobile Architect | Liderança Remota Global",
+      "label": "Senior iOS Tech Lead | Especialista em Arquitetura Mobile | Liderança de Equipes Remotas",
       "email": "pietroruypugliesi@gmail.com",
       "phone": "+55 (13) 98225-3655",
       "url": "https://github.com/pietro1704",
@@ -34,9 +34,9 @@
       {
         "name": "Pinterest",
         "position": "Senior iOS Tech Lead",
-        "url": "https://pinterest.com",
-        "startDate": "2023-09-01",
-        "endDate": "2025-09-02",
+        "url": "https://www.pinterest.com",
+        "startDate": "2023",
+        "endDate": "2025",
         "summary": "Liderança técnica remota como segundo líder de equipe iOS de 5 pessoas em aplicativo global com 450M+ usuários ativos mensais.",
         "highlights": [
           "Conduzi migração de arquitetura (Objective-C → Swift/MVVM) melhorando manutenibilidade do código e facilitando desenvolvimento de novas features.",
@@ -65,9 +65,9 @@
       {
         "name": "Instituto de Pesquisas Eldorado",
         "position": "iOS Developer",
-        "url": "https://eldorado.org.br",
-        "startDate": "2020-11-01",
-        "endDate": "2023-08-31",
+        "url": "https://www.eldorado.org.br",
+        "startDate": "2021",
+        "endDate": "2023",
         "summary": "Desenvolvimento de aplicativos iOS e liderança técnica.",
         "highlights": [
           "Desenvolvi e publiquei os apps WEMOB (mobilidade elétrica) e Márcio Atalla (fitness/saúde).",
@@ -89,8 +89,8 @@
         "name": "Apple Developer Academy",
         "position": "Aluno e Residente",
         "url": "https://developeracademy.eldorado.org.br/campinas/",
-        "startDate": "2019-01-01",
-        "endDate": "2021-12-31",
+        "startDate": "2018",
+        "endDate": "2020",
         "summary": "Programa oficial da Apple com foco em desenvolvimento iOS e mentoria.",
         "highlights": [
           "Formação intensiva em Swift, UIKit, SwiftUI e desenvolvimento orientado a produto.",
@@ -113,8 +113,8 @@
         "institution": "UNICAMP",
         "area": "Engenharia da Computação",
         "studyType": "Bacharelado",
-        "startDate": "2018-01-01",
-        "endDate": "2022-12-31"
+        "startDate": "2018",
+        "endDate": "2022"
       }
     ],
     "projects": [
@@ -213,7 +213,7 @@
   "en": {
     "basics": {
       "name": "Pietro Ruy Pugliesi",
-      "label": "Senior iOS Tech Lead | Scalable Mobile Architect | Global Remote Leadership",
+      "label": "Senior iOS Tech Lead | Mobile Architecture Expert | Remote Team Leadership",
       "email": "pietroruypugliesi@gmail.com",
       "phone": "+55 (13) 98225-3655",
       "url": "https://github.com/pietro1704",
@@ -245,9 +245,9 @@
       {
         "name": "Pinterest",
         "position": "Senior iOS Tech Lead",
-        "url": "https://pinterest.com",
-        "startDate": "2023-09-01",
-        "endDate": "2025-09-02",
+        "url": "https://www.pinterest.com",
+        "startDate": "2023",
+        "endDate": "2025",
         "summary": "Remote technical leadership as second-in-command of 5-person iOS team for global app with 450M+ monthly active users.",
         "highlights": [
           "Led architecture migration (Objective-C → Swift/MVVM) improving code maintainability and facilitating new feature development.",
@@ -276,9 +276,9 @@
       {
         "name": "Instituto de Pesquisas Eldorado",
         "position": "iOS Developer",
-        "url": "https://eldorado.org.br",
-        "startDate": "2020-11-01",
-        "endDate": "2023-08-31",
+        "url": "https://www.eldorado.org.br",
+        "startDate": "2020",
+        "endDate": "2023",
         "summary": "iOS app development and technical leadership.",
         "highlights": [
           "Developed and published WEMOB (electric mobility) and Márcio Atalla (fitness/health) apps.",
@@ -299,9 +299,9 @@
       {
         "name": "Apple Developer Academy",
         "position": "Student and Resident",
-        "url": "https://developeracademy.pucpr.br",
-        "startDate": "2019-01-01",
-        "endDate": "2020-12-31",
+        "url": "https://developeracademy.eldorado.org.br/campinas/",
+        "startDate": "2018",
+        "endDate": "2020",
         "summary": "Official Apple program focused on iOS development and mentorship.",
         "highlights": [
           "Intensive training in Swift, UIKit, SwiftUI, and product-oriented development.",
