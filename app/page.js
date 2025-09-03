@@ -2,23 +2,30 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import { FiGithub, FiLinkedin, FiMail, FiPhone, FiMapPin, FiExternalLink, FiDownload, FiMoon, FiSun } from 'react-icons/fi'
+import { 
+  FiGithub, 
+  FiLinkedin, 
+  FiMail, 
+  FiPhone, 
+  FiMapPin, 
+  FiExternalLink, 
+  FiMoon, 
+  FiSun 
+} from 'react-icons/fi'
 import resumeData from '../data/resume.json'
 
 export default function Home() {
+  // State
   const [currentLang, setCurrentLang] = useState('pt')
   const [darkMode, setDarkMode] = useState(false)
-  const [downloadLang, setDownloadLang] = useState('auto') // auto, pt, en
   const data = resumeData[currentLang]
 
+  // Effects
   useEffect(() => {
     // Detectar idioma do navegador
     const browserLang = navigator.language || navigator.userLanguage
-    if (browserLang.startsWith('pt')) {
-      setCurrentLang('pt')
-    } else {
-      setCurrentLang('en')
-    }
+    const lang = browserLang.startsWith('pt') ? 'pt' : 'en'
+    setCurrentLang(lang)
 
     // Detectar preferência de tema do sistema
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -26,6 +33,7 @@ export default function Home() {
   }, [])
 
   useEffect(() => {
+    // Aplicar tema
     if (darkMode) {
       document.documentElement.classList.add('dark')
       localStorage.setItem('theme', 'dark')
@@ -35,141 +43,195 @@ export default function Home() {
     }
   }, [darkMode])
 
+  // Event handlers
   const toggleLanguage = () => {
-    setCurrentLang(currentLang === 'pt' ? 'en' : 'pt');
-  };
-
-  const toggleTheme = () => {
-    setDarkMode(!darkMode)
+    setCurrentLang(prev => prev === 'pt' ? 'en' : 'pt')
   }
 
-  const downloadPDF = async (lang) => {
-    try {
-      const fileName = lang === 'pt' 
-        ? 'pietro-cv-pt.pdf'
-        : 'pietro-cv-en.pdf';
+  const toggleTheme = () => {
+    setDarkMode(prev => !prev)
+  }
 
-      const response = await fetch(`/pdfs/${fileName}`);
-      if (!response.ok) throw new Error('PDF not found');
+  const smoothScrollTo = (elementId) => {
+    const element = document.getElementById(elementId)
+    if (!element) return
 
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
+    // Offset para compensar o header fixo
+    const headerHeight = 80
+    const elementPosition = element.offsetTop - headerHeight
+    
+    window.scrollTo({
+      top: elementPosition,
+      behavior: 'smooth'
+    })
+  }
 
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = `Pietro_Pugliesi_CV_${lang.toUpperCase()}.pdf`;
-      document.body.appendChild(link);
-      link.click();
+  const downloadPDF = (lang) => {
+    const fileName = `pietro-cv-${lang}.pdf`
+    const downloadName = `Pietro_Pugliesi_CV_${lang.toUpperCase()}.pdf`
+    
+    const link = document.createElement('a')
+    link.href = `/pdfs/${fileName}?v=${Date.now()}`
+    link.download = downloadName
+    link.target = '_blank'
+    
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
 
-      document.body.removeChild(link);
-      window.URL.revokeObjectURL(url);
-    } catch (error) {
-      console.error('Erro ao baixar currículo:', error);
-      alert(lang === 'pt' 
-        ? 'Erro ao baixar currículo. Tente novamente.' 
-        : 'Error downloading resume. Please try again.');
-    }
-  };
+  // Constants
+  const NAV_ITEMS = [
+    { id: 'about', label: { pt: 'Sobre', en: 'About' } },
+    { id: 'experience', label: { pt: 'Experiência', en: 'Experience' } },
+    { id: 'projects', label: { pt: 'Projetos', en: 'Projects' } },
+    { id: 'skills', label: { pt: 'Skills', en: 'Skills' } },
+    { id: 'contact', label: { pt: 'Contato', en: 'Contact' } },
+  ]
+
+  const BUTTON_CLASSES = {
+    nav: "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors",
+    theme: "p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors",
+    primary: "inline-flex items-center px-6 py-3 border border-slate-300 dark:border-slate-600 text-base font-medium rounded-lg shadow-sm text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors",
+    download: "px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-slate-900 dark:bg-slate-700 hover:bg-slate-800 dark:hover:bg-slate-600 transition-colors",
+  }
+
+  // Render helpers
+  const renderNavigation = () => (
+    <nav className="hidden md:flex space-x-8">
+      {NAV_ITEMS.map(({ id, label }) => (
+        <button 
+          key={id}
+          onClick={() => smoothScrollTo(id)} 
+          className={BUTTON_CLASSES.nav}
+        >
+          {label[currentLang]}
+        </button>
+      ))}
+    </nav>
+  )
+
+  const renderLanguageToggle = () => (
+    <div className="relative inline-flex items-center">
+      <span className={`text-sm font-medium ${currentLang === 'pt' ? 'text-slate-900 dark:text-slate-100' : 'text-slate-500 dark:text-slate-400'}`}>
+        Português
+      </span>
+      <label className="relative inline-flex items-center cursor-pointer mx-2">
+        <input
+          type="checkbox"
+          checked={currentLang === 'en'}
+          onChange={toggleLanguage}
+          className="sr-only peer"
+        />
+        <div className="w-16 h-8 bg-slate-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-slate-300 dark:peer-focus:ring-slate-700 rounded-full peer dark:bg-slate-600">
+          <div className={`absolute top-1 left-1 w-6 h-6 bg-white border border-slate-300 rounded-full transition-transform dark:border-slate-500 ${currentLang === 'en' ? 'translate-x-8 bg-slate-900 dark:bg-slate-100' : 'bg-slate-900 dark:bg-slate-100'}`} />
+        </div>
+      </label>
+      <span className={`text-sm font-medium ${currentLang === 'en' ? 'text-slate-900 dark:text-slate-100' : 'text-slate-500 dark:text-slate-400'}`}>
+        English
+      </span>
+    </div>
+  )
+
+  const renderActionButtons = () => (
+    <div className="flex flex-wrap gap-4 mb-8">
+      <a
+        href={`mailto:${data.basics.email}`}
+        className={BUTTON_CLASSES.primary}
+      >
+        <FiMail className="mr-2" />
+        {currentLang === 'pt' ? 'Entrar em contato' : 'Get in touch'}
+      </a>
+      
+      <a
+        href="https://linkedin.com/in/pietro-pugliesi/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={BUTTON_CLASSES.primary}
+      >
+        <FiLinkedin className="mr-2" />
+        LinkedIn
+      </a>
+      
+      <div className="flex space-x-4">
+        <button
+          onClick={() => downloadPDF('pt')}
+          className={`${BUTTON_CLASSES.download} ${currentLang === 'pt' ? 'ring-4 ring-blue-500' : ''}`}
+        >
+          🇧🇷 Baixar CV (PT)
+        </button>
+
+        <button
+          onClick={() => downloadPDF('en')}
+          className={`${BUTTON_CLASSES.download} ${currentLang === 'en' ? 'ring-4 ring-blue-500' : ''}`}
+        >
+          🇺🇸 Download CV (EN)
+        </button>
+      </div>
+    </div>
+  )
+
+  const renderHeader = () => (
+    <header className="fixed top-0 w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg border-b border-slate-200 dark:border-slate-700 z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center py-4">
+          <h1 className="text-xl font-bold text-slate-900 dark:text-white">
+            Pietro Pugliesi
+          </h1>
+          
+          {renderNavigation()}
+
+          <div className="flex items-center space-x-4">
+            <button
+              onClick={toggleTheme}
+              className={BUTTON_CLASSES.theme}
+            >
+              {darkMode ? <FiSun size={18} /> : <FiMoon size={18} />}
+            </button>
+            
+            {renderLanguageToggle()}
+          </div>
+        </div>
+      </div>
+    </header>
+  )
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
-      {/* Header */}
-      <header className="fixed top-0 w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg border-b border-slate-200 dark:border-slate-700 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            <h1 className="text-xl font-bold text-slate-900 dark:text-white">
-              Pietro Pugliesi
-            </h1>
-            
-            <nav className="hidden md:flex space-x-8">
-              <a href="#about" className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">
-                {currentLang === 'pt' ? 'Sobre' : 'About'}
-              </a>
-              <a href="#experience" className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">
-                {currentLang === 'pt' ? 'Experiência' : 'Experience'}
-              </a>
-              <a href="#projects" className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">
-                {currentLang === 'pt' ? 'Projetos' : 'Projects'}
-              </a>
-              <a href="#skills" className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">
-                Skills
-              </a>
-              <a href="#contact" className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">
-                {currentLang === 'pt' ? 'Contato' : 'Contact'}
-              </a>
-            </nav>
-
-            <div className="flex items-center space-x-4">
-              <button
-                onClick={toggleTheme}
-                className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
-              >
-                {darkMode ? <FiSun size={18} /> : <FiMoon size={18} />}
-              </button>
-              
-              <div className="relative inline-flex items-center">
-                <span className={`text-sm font-medium ${currentLang === 'pt' ? 'text-slate-900 dark:text-slate-100' : 'text-slate-500 dark:text-slate-400'}`}>Português</span>
-                <label className="relative inline-flex items-center cursor-pointer mx-2">
-                  <input
-                    type="checkbox"
-                    checked={currentLang === 'en'}
-                    onChange={toggleLanguage}
-                    className="sr-only peer"
-                  />
-                  <div className="w-16 h-8 bg-slate-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-slate-300 dark:peer-focus:ring-slate-700 rounded-full peer dark:bg-slate-600">
-                    <div
-                      className={`absolute top-1 left-1 w-6 h-6 bg-white border border-slate-300 rounded-full transition-transform dark:border-slate-500 ${currentLang === 'en' ? 'translate-x-8 bg-slate-900 dark:bg-slate-100' : 'bg-slate-900 dark:bg-slate-100'}`}
-                    ></div>
-                  </div>
-                </label>
-                <span className={`text-sm font-medium ${currentLang === 'en' ? 'text-slate-900 dark:text-slate-100' : 'text-slate-500 dark:text-slate-400'}`}>English</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
+      {renderHeader()}
 
       <main className="pt-20">
         {/* Hero Section */}
         <section id="about" className="py-20 lg:py-32">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
-              <div className="lg:col-span-8 xl:col-span-7">
+            <div className="lg:grid lg:grid-cols-12 lg:gap-16 items-start">
+              <div className="lg:col-span-12">
                 <h1 className="text-4xl md:text-6xl font-bold text-slate-900 dark:text-white leading-tight">
                   {data.basics.name}
                 </h1>
                 <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mt-4 mb-6">
                   {data.basics.label}
                 </p>
-                <p className="text-lg text-slate-700 dark:text-slate-400 mb-8 leading-relaxed">
-                  {data.basics.summary}
-                </p>
                 
-                <div className="flex flex-wrap gap-4 mb-8">
-                  <a
-                    href={`mailto:${data.basics.email}`}
-                    className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-slate-900 dark:bg-slate-700 hover:bg-slate-800 dark:hover:bg-slate-600 transition-colors"
-                  >
-                    <FiMail className="mr-2" />
-                    {currentLang === 'pt' ? 'Entrar em contato' : 'Get in touch'}
-                  </a>
+                <div className="flex flex-col lg:flex-row lg:gap-8 items-start mb-8">
+                  <div className="flex-shrink-0 mb-6 lg:mb-0 lg:order-2">
+                    <Image
+                      src="/photo.jpg"
+                      alt="Pietro Pugliesi"
+                      width={240}
+                      height={240}
+                      className="rounded-2xl object-cover mx-auto lg:mx-0"
+                    />
+                  </div>
                   
-                  <div className="flex space-x-4">
-                    <button
-                      onClick={() => downloadPDF('pt')}
-                      className={`px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-slate-900 dark:bg-slate-700 hover:bg-slate-800 dark:hover:bg-slate-600 transition-colors ${currentLang === 'pt' ? 'ring-4 ring-blue-500' : ''}`}
-                    >
-                      🇧🇷 Baixar CV (PT)
-                    </button>
-
-                    <button
-                      onClick={() => downloadPDF('en')}
-                      className={`px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-slate-900 dark:bg-slate-700 hover:bg-slate-800 dark:hover:bg-slate-600 transition-colors ${currentLang === 'en' ? 'ring-4 ring-blue-500' : ''}`}
-                    >
-                      🇺🇸 Download CV (EN)
-                    </button>
+                  <div className="flex-1 lg:order-1">
+                    <p className="text-lg text-slate-700 dark:text-slate-400 leading-relaxed">
+                      {data.basics.summary}
+                    </p>
                   </div>
                 </div>
+                
+                {renderActionButtons()}
 
                 <div className="flex space-x-6">
                   {data.basics.profiles.map((profile) => (
@@ -184,18 +246,6 @@ export default function Home() {
                       {profile.network === 'LinkedIn' && <FiLinkedin size={24} />}
                     </a>
                   ))}
-                </div>
-              </div>
-
-              <div className="lg:col-span-4 xl:col-span-5 mt-12 lg:mt-0">
-                <div className="relative">
-                  <Image
-                    src="/photo.jpg"
-                    alt="Pietro Pugliesi"
-                    width={320}
-                    height={320}
-                    className="rounded-2xl object-cover mx-auto"
-                  />
                 </div>
               </div>
             </div>
@@ -380,6 +430,16 @@ export default function Home() {
               >
                 <FiMail className="mr-3" />
                 {data.basics.email}
+              </a>
+              
+              <a
+                href="https://linkedin.com/in/pietro-pugliesi/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-8 py-4 border border-slate-300 dark:border-slate-600 text-lg font-medium rounded-lg text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
+              >
+                <FiLinkedin className="mr-3" />
+                LinkedIn
               </a>
               
               <a
