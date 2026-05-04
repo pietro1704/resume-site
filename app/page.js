@@ -104,6 +104,7 @@ export default function Home() {
     { id: 'experience', label: { pt: 'Experiência', en: 'Experience' } },
     { id: 'projects', label: { pt: 'Projetos', en: 'Projects' } },
     { id: 'skills', label: { pt: 'Skills', en: 'Skills' } },
+    { id: 'education', label: { pt: 'Formação', en: 'Education' } },
     { id: 'contact', label: { pt: 'Contato', en: 'Contact' } },
   ]
 
@@ -426,6 +427,51 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Education Section */}
+        {data.education && data.education.length > 0 && (
+          <section id="education" className="py-20">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-16 text-center">
+                {currentLang === 'pt' ? 'Formação' : 'Education'}
+              </h2>
+              <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                {data.education.map((edu, index) => (
+                  <div key={index} className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-6">
+                    <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-1">
+                      {edu.studyType}
+                    </h3>
+                    <p className="text-slate-700 dark:text-slate-300 mb-1">
+                      {edu.area}
+                    </p>
+                    <p className="text-slate-600 dark:text-slate-400 mb-2">
+                      {edu.institution}
+                    </p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400 mb-3">
+                      {edu.startDate?.split('-')[0]} – {edu.endDate?.split('-')[0]}
+                    </p>
+                    {edu.highlights && (
+                      <ul className="space-y-1">
+                        {edu.highlights.map((h, hi) => (
+                          <li key={hi} className="flex items-start text-sm text-slate-600 dark:text-slate-300">
+                            <span className="flex-shrink-0 w-1.5 h-1.5 bg-slate-400 rounded-full mt-2 mr-2"></span>
+                            {h}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                ))}
+              </div>
+              {data.basics.languages && (
+                <div className="mt-10 text-center text-slate-600 dark:text-slate-400">
+                  <span className="font-semibold">{currentLang === 'pt' ? 'Idiomas: ' : 'Languages: '}</span>
+                  {data.basics.languages.join(' · ')}
+                </div>
+              )}
+            </div>
+          </section>
+        )}
+
         {/* Contact Section */}
         <section id="contact" className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -482,7 +528,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
               <p className="text-slate-400">
-                © 2025 Pietro Pugliesi. {currentLang === 'pt' ? 'Todos os direitos reservados.' : 'All rights reserved.'}
+                © {new Date().getFullYear()} Pietro Pugliesi. {currentLang === 'pt' ? 'Todos os direitos reservados.' : 'All rights reserved.'}
               </p>
             </div>
             
