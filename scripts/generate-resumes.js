@@ -5,7 +5,52 @@ const path = require('path');
 const puppeteer = require('puppeteer');
 const archiver = require('archiver');
 
-const resumeData = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/resume.json'), 'utf8'));
+// Resume data is loaded with fallback chain:
+//   1. data/private/resume.json  (cloned from private repo at build time)
+//   2. data/resume.json          (local dev override; gitignored)
+//   3. data/resume.example.json  (committed placeholder; safe default)
+// Whichever wins is mirrored to data/resume.json so the Next bundler can
+// import it statically without conditionals.
+function loadResumeData() {
+  const root = path.join(__dirname, '..');
+  const candidates = [
+    path.join(root, 'data/private/resume.json'),
+    path.join(root, 'data/resume.json'),
+    path.join(root, 'data/resume.example.json'),
+  ];
+  const source = candidates.find(p => fs.existsSync(p));
+  if (!source) {
+    throw new Error('No resume.json found.');
+  }
+  console.log(`📄 Resume source: ${path.relative(root, source)}`);
+  const target = path.join(root, 'data/resume.json');
+  if (source !== target) {
+    fs.copyFileSync(source, target);
+    console.log(`📋 Mirrored to data/resume.json for Next bundler`);
+  }
+  return JSON.parse(fs.readFileSync(target, 'utf8'));
+}
+
+// Profile photo: prefer data/private/photo.jpg, then public/photo.jpg if
+// already in place, otherwise fall back to the committed placeholder.
+function ensureProfilePhoto() {
+  const root = path.join(__dirname, '..');
+  const target = path.join(root, 'public/photo.jpg');
+  const candidates = [
+    path.join(root, 'data/private/photo.jpg'),
+    target,
+    path.join(root, 'public/photo.placeholder.jpg'),
+  ];
+  const source = candidates.find(p => fs.existsSync(p));
+  if (!source) return;
+  if (source !== target) {
+    fs.copyFileSync(source, target);
+    console.log(`🖼  Profile photo: ${path.relative(root, source)} → public/photo.jpg`);
+  }
+}
+
+const resumeData = loadResumeData();
+ensureProfilePhoto();
 
 function formatDate(value, lang) {
   if (!value) return '';
@@ -278,16 +323,28 @@ function generateSkillsTemplate(data, lang) {
 
 // ---------- BUILD ----------
 
+function nameSlug(data) {
+  return (data.basics.name || 'resume')
+    .toLowerCase()
+    .normalize('NFD').replace(/[̀-ͯ]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '')
+    .split('-').slice(0, 1).join('-'); // first name only — short URLs
+}
+
 async function generatePDFs() {
   console.log('🔄 Gerando PDFs...');
 
+  const slug = nameSlug(resumeData.en || resumeData.pt);
+  const fname = (variant, lang) => `${slug}-cv-${variant}-${lang}.pdf`;
+
   const templates = [
-    { name: 'pietro-cv-ats-vagasAltoVolume-pt.pdf', content: generateATSTemplate(resumeData.pt, 'pt') },
-    { name: 'pietro-cv-ats-vagasAltoVolume-en.pdf', content: generateATSTemplate(resumeData.en, 'en') },
-    { name: 'pietro-cv-casestudy-vagasLideranca-pt.pdf', content: generateCaseStudyTemplate(resumeData.pt, 'pt') },
-    { name: 'pietro-cv-casestudy-vagasLideranca-en.pdf', content: generateCaseStudyTemplate(resumeData.en, 'en') },
-    { name: 'pietro-cv-skills-vagasMuitasKeywords-pt.pdf', content: generateSkillsTemplate(resumeData.pt, 'pt') },
-    { name: 'pietro-cv-skills-vagasMuitasKeywords-en.pdf', content: generateSkillsTemplate(resumeData.en, 'en') },
+    { name: fname('ats',       'pt'), content: generateATSTemplate(resumeData.pt, 'pt') },
+    { name: fname('ats',       'en'), content: generateATSTemplate(resumeData.en, 'en') },
+    { name: fname('casestudy', 'pt'), content: generateCaseStudyTemplate(resumeData.pt, 'pt') },
+    { name: fname('casestudy', 'en'), content: generateCaseStudyTemplate(resumeData.en, 'en') },
+    { name: fname('skills',    'pt'), content: generateSkillsTemplate(resumeData.pt, 'pt') },
+    { name: fname('skills',    'en'), content: generateSkillsTemplate(resumeData.en, 'en') },
   ];
 
   const outputDirs = [
@@ -313,30 +370,35 @@ async function generatePDFs() {
   await browser.close();
 
   // Aliases (general / pt / en) — always use ATS template in correct language
-  const ptSrc = path.join(outputDirs[0], 'pietro-cv-ats-vagasAltoVolume-pt.pdf');
-  const enSrc = path.join(outputDirs[0], 'pietro-cv-ats-vagasAltoVolume-en.pdf');
-  const ptTarget = path.join(outputDirs[0], 'pietro-cv-pt.pdf');
-  const enTarget = path.join(outputDirs[0], 'pietro-cv-en.pdf');
-  const generalTarget = path.join(outputDirs[0], 'pietro-cv-general.pdf');
+  const ptSrc = path.join(outputDirs[0], fname('ats', 'pt'));
+  const enSrc = path.join(outputDirs[0], fname('ats', 'en'));
+  const ptTarget = path.join(outputDirs[0], `${slug}-cv-pt.pdf`);
+  const enTarget = path.join(outputDirs[0], `${slug}-cv-en.pdf`);
+  const generalTarget = path.join(outputDirs[0], `${slug}-cv-general.pdf`);
   fs.copyFileSync(ptSrc, ptTarget);
   fs.copyFileSync(enSrc, enTarget);
   fs.copyFileSync(ptSrc, generalTarget);
-  console.log(`✅ Aliases: pietro-cv-pt.pdf, pietro-cv-en.pdf, pietro-cv-general.pdf`);
+  console.log(`✅ Aliases: ${slug}-cv-pt.pdf, ${slug}-cv-en.pdf, ${slug}-cv-general.pdf`);
 
   // Mirror to public/pdfs (for site downloads)
   const publicDir = path.join(__dirname, '../public/pdfs');
   if (!fs.existsSync(publicDir)) fs.mkdirSync(publicDir, { recursive: true });
 
+  // Clean any stale PDFs in public/pdfs (other slugs from previous builds)
+  fs.readdirSync(publicDir)
+    .filter(f => f.endsWith('.pdf'))
+    .forEach(f => fs.unlinkSync(path.join(publicDir, f)));
+
   const mirror = [
-    'pietro-cv-pt.pdf',
-    'pietro-cv-en.pdf',
-    'pietro-cv-general.pdf',
-    'pietro-cv-ats-vagasAltoVolume-pt.pdf',
-    'pietro-cv-ats-vagasAltoVolume-en.pdf',
-    'pietro-cv-casestudy-vagasLideranca-pt.pdf',
-    'pietro-cv-casestudy-vagasLideranca-en.pdf',
-    'pietro-cv-skills-vagasMuitasKeywords-pt.pdf',
-    'pietro-cv-skills-vagasMuitasKeywords-en.pdf',
+    `${slug}-cv-pt.pdf`,
+    `${slug}-cv-en.pdf`,
+    `${slug}-cv-general.pdf`,
+    fname('ats', 'pt'),
+    fname('ats', 'en'),
+    fname('casestudy', 'pt'),
+    fname('casestudy', 'en'),
+    fname('skills', 'pt'),
+    fname('skills', 'en'),
   ];
   mirror.forEach(name => {
     fs.copyFileSync(path.join(outputDirs[0], name), path.join(publicDir, name));
@@ -353,8 +415,8 @@ async function generatePDFs() {
   templates.forEach(t => archive.file(path.join(outputDirs[0], t.name), { name: t.name }));
   await archive.finalize();
 
-  // Cache-buster manifest (site reads buildStamp for ?v= param)
-  const manifest = { generatedAt: buildTimestamp.toISOString(), buildStamp };
+  // Cache-buster manifest (site reads buildStamp for ?v= param + slug for filenames)
+  const manifest = { generatedAt: buildTimestamp.toISOString(), buildStamp, slug };
   [
     path.join(__dirname, '../data/pdf-manifest.json'),
     path.join(publicDir, 'manifest.json'),

@@ -1,0 +1,112 @@
+{
+  "pt": {
+    "basics": {
+      "name": "Ada Lovelace",
+      "label": "Senior Software Engineer | Distributed Systems",
+      "email": "ada@example.com",
+      "phone": "+00 (00) 0000-0000",
+      "url": "https://example.com",
+      "summary": "Engenheira de software sênior com X+ anos de experiência. Lidero a iniciativa Y na empresa Z, escalando o produto W para N+ usuários. Pratico fluxo AI-augmented diariamente. Idiomas: PT/EN.",
+      "languages": ["Português (nativo)", "Inglês (C1/C2)"],
+      "location": { "city": "Cidade", "region": "UF", "country": "País" },
+      "profiles": [
+        { "network": "GitHub",   "username": "your-handle", "url": "https://github.com/your-handle" },
+        { "network": "LinkedIn", "username": "your-handle", "url": "https://linkedin.com/in/your-handle/" }
+      ]
+    },
+    "work": [
+      {
+        "name": "Empresa Atual",
+        "position": "Senior Engineer",
+        "url": "https://empresa.com",
+        "startDate": "2024-01",
+        "endDate": "Present",
+        "summary": "Resumo de uma linha sobre o papel.",
+        "highlights": [
+          "Conquista 1 com impacto quantificado.",
+          "Conquista 2 com impacto qualitativo.",
+          "Conquista 3 sobre liderança/mentoria."
+        ],
+        "technologies": ["Tecnologia A", "Tecnologia B", "Tecnologia C"]
+      }
+    ],
+    "education": [
+      {
+        "institution": "Universidade",
+        "area": "Ciência da Computação",
+        "studyType": "Bacharelado",
+        "startDate": "2018",
+        "endDate": "2022"
+      }
+    ],
+    "projects": [
+      {
+        "name": "Projeto Open Source",
+        "description": "Descrição curta do projeto.",
+        "highlights": ["Bullet 1", "Bullet 2"],
+        "technologies": ["Stack 1", "Stack 2"],
+        "url": "https://github.com/your-handle/projeto"
+      }
+    ],
+    "skills": {
+      "Linguagens": ["Swift", "TypeScript", "Python"],
+      "AI-Augmented Engineering": ["Claude Code", "Cursor"],
+      "Arquitetura": ["MVVM", "Clean Architecture", "SOLID"]
+    }
+  },
+  "en": {
+    "basics": {
+      "name": "Ada Lovelace",
+      "label": "Senior Software Engineer | Distributed Systems",
+      "email": "ada@example.com",
+      "phone": "+00 (00) 0000-0000",
+      "url": "https://example.com",
+      "summary": "Senior software engineer with X+ years of experience. Leading the Y initiative at Z, scaling W product to N+ users. AI-augmented workflow daily. Languages: PT/EN.",
+      "languages": ["Portuguese (native)", "English (C1/C2)"],
+      "location": { "city": "City", "region": "State", "country": "Country" },
+      "profiles": [
+        { "network": "GitHub",   "username": "your-handle", "url": "https://github.com/your-handle" },
+        { "network": "LinkedIn", "username": "your-handle", "url": "https://linkedin.com/in/your-handle/" }
+      ]
+    },
+    "work": [
+      {
+        "name": "Current Company",
+        "position": "Senior Engineer",
+        "url": "https://company.com",
+        "startDate": "2024-01",
+        "endDate": "Present",
+        "summary": "One-line summary of the role.",
+        "highlights": [
+          "Achievement 1 with quantified impact.",
+          "Achievement 2 with qualitative impact.",
+          "Achievement 3 about leadership/mentorship."
+        ],
+        "technologies": ["Tech A", "Tech B", "Tech C"]
+      }
+    ],
+    "education": [
+      {
+        "institution": "University",
+        "area": "Computer Science",
+        "studyType": "Bachelor's Degree",
+        "startDate": "2018",
+        "endDate": "2022"
+      }
+    ],
+    "projects": [
+      {
+        "name": "Open Source Project",
+        "description": "Short project description.",
+        "highlights": ["Bullet 1", "Bullet 2"],
+        "technologies": ["Stack 1", "Stack 2"],
+        "url": "https://github.com/your-handle/project"
+      }
+    ],
+    "skills": {
+      "Languages": ["Swift", "TypeScript", "Python"],
+      "AI-Augmented Engineering": ["Claude Code", "Cursor"],
+      "Architecture": ["MVVM", "Clean Architecture", "SOLID"]
+    }
+  }
+}

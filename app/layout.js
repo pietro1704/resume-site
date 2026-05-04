@@ -1,8 +1,14 @@
 import './globals.css'
+import resumeData from '../data/resume.json'
+
+const baseLang = (resumeData.en?.basics) ? resumeData.en : resumeData.pt
+const name = baseLang.basics.name
+const label = baseLang.basics.label
+const summary = baseLang.basics.summary
 
 export const metadata = {
-  title: 'Pietro Pugliesi - iOS Developer & Computer Engineer',
-  description: 'Senior iOS Developer at Pinterest with expertise in iOS development, testing (Unit and Integration), MVVM architecture, and mobile app development.',
+  title: `${name} — ${label}`,
+  description: summary,
 }
 
 export default function RootLayout({ children }) {

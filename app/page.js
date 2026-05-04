@@ -68,8 +68,10 @@ export default function Home() {
   }
 
   const downloadPDF = (lang) => {
-    const fileName = `pietro-cv-${lang}.pdf`
-    const downloadName = `Pietro_Pugliesi_CV_${lang.toUpperCase()}.pdf`
+    const slug = pdfManifest?.slug || 'resume'
+    const fileName = `${slug}-cv-${lang}.pdf`
+    const safeName = (data.basics.name || 'resume').replace(/\s+/g, '_')
+    const downloadName = `${safeName}_CV_${lang.toUpperCase()}.pdf`
     const version = pdfManifest?.buildStamp || Date.now()
 
     const link = document.createElement('a')
@@ -195,7 +197,7 @@ export default function Home() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <h1 className="text-xl font-bold text-slate-900 dark:text-white">
-            Pietro Pugliesi
+            {data.basics.name}
           </h1>
           
           {renderNavigation()}
@@ -241,7 +243,7 @@ export default function Home() {
                   <div className="flex-shrink-0 mb-6 lg:mb-0 lg:order-2">
                     <Image
                       src="/photo.jpg"
-                      alt="Pietro Pugliesi"
+                      alt={data.basics.name}
                       width={240}
                       height={240}
                       className="rounded-2xl object-cover mx-auto lg:mx-0"
@@ -528,7 +530,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
               <p className="text-slate-400">
-                © {new Date().getFullYear()} Pietro Pugliesi. {currentLang === 'pt' ? 'Todos os direitos reservados.' : 'All rights reserved.'}
+                © {new Date().getFullYear()} {data.basics.name}. {currentLang === 'pt' ? 'Todos os direitos reservados.' : 'All rights reserved.'}
               </p>
             </div>
             

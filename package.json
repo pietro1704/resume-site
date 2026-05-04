@@ -1,17 +1,32 @@
 {
-  "name": "pietro-portfolio",
+  "name": "resume-site",
   "version": "1.0.0",
-  "private": true,
-  "description": "Pietro Pugliesi's personal portfolio website",
-  "keywords": ["portfolio", "ios-developer", "react", "next.js"],
+  "private": false,
+  "description": "Single-source-of-truth resume site: one JSON powers a bilingual web portfolio + multiple ATS-friendly PDF templates.",
+  "keywords": [
+    "resume",
+    "cv",
+    "portfolio",
+    "next.js",
+    "puppeteer",
+    "pdf-generation",
+    "ats-friendly",
+    "bilingual"
+  ],
   "author": "Pietro Pugliesi <pietroruypugliesi@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pietro1704/resume-site.git"
+  },
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/fetch-private-data.js",
     "build": "npm run pdf && next build",
     "build-all": "npm run pdf && next build",
     "start": "next start",
     "pdf": "node scripts/generate-resumes.js",
-    "clean": "rm -rf .next out",
+    "clean": "rm -rf .next out data/private",
     "deploy": "npm run clean && npm run build"
   },
   "dependencies": {

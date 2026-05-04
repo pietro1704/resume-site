@@ -37,3 +37,16 @@ yarn-error.log*
 # PDF generation
 /pdfs/all-resumes/
 /pdfs/.DS_Store
+
+# Personal data — kept in private resume-data repo (see README)
+/data/resume.json
+/data/pdf-manifest.json
+/pdfs/*.pdf
+/pdfs/*.zip
+/public/pdfs/*.pdf
+/public/pdfs/*.zip
+/public/pdfs/manifest.json
+/public/photo.jpg
+
+# Local data dir for build (cloned at build time from private repo)
+/data/private/

@@ -31,23 +31,16 @@ jobs:
       - name: Verify generated artifacts
         run: |
           set -e
-          required_pdfs=(
-            "out/pdfs/pietro-cv-pt.pdf"
-            "out/pdfs/pietro-cv-en.pdf"
-            "out/pdfs/pietro-cv-general.pdf"
-            "out/pdfs/pietro-cv-ats-vagasAltoVolume-pt.pdf"
-            "out/pdfs/pietro-cv-ats-vagasAltoVolume-en.pdf"
-            "out/pdfs/pietro-cv-casestudy-vagasLideranca-pt.pdf"
-            "out/pdfs/pietro-cv-casestudy-vagasLideranca-en.pdf"
-            "out/pdfs/pietro-cv-skills-vagasMuitasKeywords-pt.pdf"
-            "out/pdfs/pietro-cv-skills-vagasMuitasKeywords-en.pdf"
-          )
-          for f in "${required_pdfs[@]}"; do
+          slug=$(node -p "require('./data/pdf-manifest.json').slug")
+          required_variants=("cv-pt" "cv-en" "cv-general" "cv-ats-pt" "cv-ats-en" "cv-casestudy-pt" "cv-casestudy-en" "cv-skills-pt" "cv-skills-en")
+          for v in "${required_variants[@]}"; do
+            f="out/pdfs/${slug}-${v}.pdf"
             if [ ! -s "$f" ]; then
               echo "Missing or empty: $f"
+              ls out/pdfs/ || true
               exit 1
             fi
           done
           test -f out/index.html
           test -f out/download.html || test -d out/download
-          echo "All required artifacts present."
+          echo "All required artifacts present (slug: $slug)."
