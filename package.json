@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "npm run pdf && next build",
+    "build-all": "npm run pdf && next build",
     "start": "next start",
     "pdf": "node scripts/generate-resumes.js",
     "clean": "rm -rf .next out",

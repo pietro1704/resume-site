@@ -13,6 +13,7 @@ import {
   FiSun 
 } from 'react-icons/fi'
 import resumeData from '../data/resume.json'
+import pdfManifest from '../data/pdf-manifest.json'
 
 export default function Home() {
   // State
@@ -69,15 +70,32 @@ export default function Home() {
   const downloadPDF = (lang) => {
     const fileName = `pietro-cv-${lang}.pdf`
     const downloadName = `Pietro_Pugliesi_CV_${lang.toUpperCase()}.pdf`
-    
+    const version = pdfManifest?.buildStamp || Date.now()
+
     const link = document.createElement('a')
-    link.href = `/pdfs/${fileName}?v=${Date.now()}`
+    link.href = `/pdfs/${fileName}?v=${version}`
     link.download = downloadName
     link.target = '_blank'
-    
+
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
+  }
+
+  const formatPeriod = (start, end) => {
+    const monthsPT = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']
+    const monthsEN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    const months = currentLang === 'pt' ? monthsPT : monthsEN
+    const fmt = (value) => {
+      if (!value) return null
+      if (value === 'Present') return currentLang === 'pt' ? 'Atual' : 'Present'
+      const [year, month] = value.split('-')
+      if (month) return `${months[parseInt(month, 10) - 1]}/${year}`
+      return year
+    }
+    const startLabel = fmt(start)
+    const endLabel = fmt(end) || (currentLang === 'pt' ? 'Atual' : 'Present')
+    return `${startLabel} - ${endLabel}`
   }
 
   // Constants
@@ -278,7 +296,7 @@ export default function Home() {
                           {job.position}
                         </h3>
                         <span className="text-slate-600 dark:text-slate-400 text-sm">
-                          {job.startDate} - {job.endDate || 'Present'}
+                          {formatPeriod(job.startDate, job.endDate)}
                         </span>
                       </div>
                       

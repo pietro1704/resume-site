@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Chromium for Puppeteer
+        run: npx puppeteer browsers install chrome
+
+      - name: Build (PDFs + Next static export)
+        run: npm run build
+
+      - name: Verify generated artifacts
+        run: |
+          set -e
+          required_pdfs=(
+            "out/pdfs/pietro-cv-pt.pdf"
+            "out/pdfs/pietro-cv-en.pdf"
+            "out/pdfs/pietro-cv-general.pdf"
+            "out/pdfs/pietro-cv-ats-vagasAltoVolume-pt.pdf"
+            "out/pdfs/pietro-cv-ats-vagasAltoVolume-en.pdf"
+            "out/pdfs/pietro-cv-casestudy-vagasLideranca-pt.pdf"
+            "out/pdfs/pietro-cv-casestudy-vagasLideranca-en.pdf"
+            "out/pdfs/pietro-cv-skills-vagasMuitasKeywords-pt.pdf"
+            "out/pdfs/pietro-cv-skills-vagasMuitasKeywords-en.pdf"
+          )
+          for f in "${required_pdfs[@]}"; do
+            if [ ! -s "$f" ]; then
+              echo "Missing or empty: $f"
+              exit 1
+            fi
+          done
+          test -f out/index.html
+          test -f out/download.html || test -d out/download
+          echo "All required artifacts present."
