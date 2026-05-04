@@ -296,7 +296,9 @@ async function generatePDFs() {
   ];
   outputDirs.forEach(d => fs.existsSync(d) || fs.mkdirSync(d, { recursive: true }));
 
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+  });
   const page = await browser.newPage();
 
   for (const tpl of templates) {
