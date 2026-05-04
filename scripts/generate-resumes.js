@@ -8,28 +8,6 @@ const archiver = require('archiver');
 // Read resume data
 const resumeData = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/resume.json'), 'utf8'));
 
-// Date formatter that handles "YYYY", "YYYY-MM" and "Present"
-function formatDate(value, lang) {
-  if (!value) return '';
-  if (value === 'Present') return lang === 'pt' ? 'Atual' : 'Present';
-  const monthsPT = ['jan.', 'fev.', 'mar.', 'abr.', 'mai.', 'jun.', 'jul.', 'ago.', 'set.', 'out.', 'nov.', 'dez.'];
-  const monthsEN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  const months = lang === 'pt' ? monthsPT : monthsEN;
-  const [year, month] = value.split('-');
-  if (month) return `${months[parseInt(month, 10) - 1]} ${year}`;
-  return year;
-}
-
-// Build timestamp for cache-busting (visible in PDF footer + filename)
-const buildTimestamp = new Date();
-const buildStamp = buildTimestamp.toISOString().slice(0, 10).replace(/-/g, '');
-function buildFooter(lang) {
-  const date = buildTimestamp.toISOString().slice(0, 10);
-  return lang === 'pt'
-    ? `Gerado em ${date}`
-    : `Generated on ${date}`;
-}
-
 // Minimal ATS Template - Zero graphics, pure text
 function generateATSTemplate(data, lang) {
   const isPortuguese = lang === 'pt';
@@ -99,7 +77,7 @@ function generateATSTemplate(data, lang) {
         ${data.work.map(job => `
         <div class="job">
             <div class="job-title">${job.position}</div>
-            <div class="job-date">${formatDate(job.startDate, lang)} - ${formatDate(job.endDate, lang) || (isPortuguese ? 'Atual' : 'Present')}</div>
+            <div class="job-date">${new Date(job.startDate).toLocaleDateString(lang === 'pt' ? 'pt-BR' : 'en-US', { month: 'short', year: 'numeric' })} - ${job.endDate ? new Date(job.endDate).toLocaleDateString(lang === 'pt' ? 'pt-BR' : 'en-US', { month: 'short', year: 'numeric' }) : (isPortuguese ? 'Atual' : 'Present')}</div>
             <div class="clear"></div>
             <div class="job-company">${job.name}</div>
             <ul class="highlights">
@@ -251,7 +229,7 @@ function generateCaseStudyTemplate(data, lang) {
         ${data.work.map(job => `
         <div class="job">
             <div class="job-title">${job.position}</div>
-            <div class="job-date">${formatDate(job.startDate, lang)} - ${formatDate(job.endDate, lang) || (isPortuguese ? 'Atual' : 'Present')}</div>
+            <div class="job-date">${new Date(job.startDate).toLocaleDateString(lang === 'pt' ? 'pt-BR' : 'en-US', { month: 'short', year: 'numeric' })} - ${job.endDate ? new Date(job.endDate).toLocaleDateString(lang === 'pt' ? 'pt-BR' : 'en-US', { month: 'short', year: 'numeric' }) : (isPortuguese ? 'Atual' : 'Present')}</div>
             <div class="clear"></div>
             <div class="job-company">${job.name}</div>
             <ul class="highlights">
@@ -566,11 +544,12 @@ async function generatePDFs() {
   const generalResumeSourceEN = path.join(outputDirs[0], 'pietro-cv-ats-vagasAltoVolume-en.pdf');
   const generalResumeTarget = path.join(outputDirs[0], 'pietro-cv-general.pdf');
 
-  if (fs.existsSync(generalResumeSourcePT)) {
-    fs.copyFileSync(generalResumeSourcePT, generalResumeTarget);
+  if (fs.existsSync(generalResumeSourcePT) && fs.existsSync(generalResumeSourceEN)) {
+    const source = resumeData.lang === 'pt' ? generalResumeSourcePT : generalResumeSourceEN;
+    fs.copyFileSync(source, generalResumeTarget);
     console.log(`✅ Cópia criada: ${generalResumeTarget}`);
   } else {
-    console.error('❌ Arquivo fonte para pietro-cv-general.pdf não encontrado.');
+    console.error('❌ Arquivo fonte para pietro-cv-general.pdf não encontrado em ambos os idiomas.');
   }
 
   // Criar cópias do currículo geral como pietro-cv-pt.pdf e pietro-cv-en.pdf
@@ -610,33 +589,6 @@ async function generatePDFs() {
 
   fs.copyFileSync(enResumeTarget, publicEnResume);
   console.log(`✅ Cópia criada: ${publicEnResume}`);
-
-  // CV dedicado para Beon.tech (talent marketplace LATAM→US, vetting humano)
-  // Usa o template case study EN, que destaca narrativa Pinterest para clientes US.
-  const beonSource = path.join(outputDirs[0], 'pietro-cv-casestudy-vagasLideranca-en.pdf');
-  const beonTargets = [
-    path.join(outputDirs[0], 'pietro-cv-beon-tech-en.pdf'),
-    path.join(outputDirs[1], 'pietro-cv-beon-tech-en.pdf'),
-    path.join(publicDir, 'pietro-cv-beon-tech-en.pdf'),
-  ];
-  beonTargets.forEach(target => {
-    fs.copyFileSync(beonSource, target);
-    console.log(`✅ Cópia Beon.tech criada: ${target}`);
-  });
-
-  // Cache-buster manifest: site lê para gerar URLs únicos por build
-  const manifest = {
-    generatedAt: buildTimestamp.toISOString(),
-    buildStamp,
-  };
-  const manifestPaths = [
-    path.join(__dirname, '../data/pdf-manifest.json'),
-    path.join(publicDir, 'manifest.json'),
-  ];
-  manifestPaths.forEach(p => {
-    fs.writeFileSync(p, JSON.stringify(manifest, null, 2));
-    console.log(`✅ Manifest gerado: ${p}`);
-  });
 }
 
 generatePDFs().catch(err => console.error('Erro ao gerar PDFs:', err));
